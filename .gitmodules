@@ -1,0 +1,8 @@
+[submodule "nus-operating-system"]
+	path = nus-operating-system
+	url = git@github.com:plty/nus-operating-system.git
+	branch = master
+[submodule "nus-parallel-computing"]
+	path = nus-parallel-computing
+	url = git@github.com:plty/nus-parallel-computing.git
+	branch = master
