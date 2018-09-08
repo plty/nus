@@ -1,0 +1,3 @@
+[submodule "nus-operating-system"]
+	path = nus-operating-system
+	url = git@github.com:plty/nus-operating-system.git
