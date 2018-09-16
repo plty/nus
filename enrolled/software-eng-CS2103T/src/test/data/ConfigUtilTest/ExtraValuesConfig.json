@@ -1,0 +1,6 @@
+{
+  "appTitle" : "Typical App Title",
+  "logLevel" : "INFO",
+  "userPrefsFilePath" : "preferences.json",
+  "extra" : "extra value"
+}
