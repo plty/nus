@@ -1,0 +1,1152 @@
+# started on Mon Sep 17 18:25:00 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 1':
+
+     105638.093077      task-clock (msec)         #    1.000 CPUs utilized          
+               131      context-switches          #    0.001 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+            14,449      page-faults               #    0.137 K/sec                  
+   304,042,956,505      cycles                    #    2.878 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,653,066,670      instructions              #    1.67  insns per cycle        
+    17,350,498,961      branches                  #  164.245 M/sec                  
+         5,115,637      branch-misses             #    0.03% of all branches        
+
+     105.640251993 seconds time elapsed
+
+# started on Mon Sep 17 18:28:31 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 2':
+
+     117566.713428      task-clock (msec)         #    1.996 CPUs utilized          
+               147      context-switches          #    0.001 K/sec                  
+                 1      cpu-migrations            #    0.000 K/sec                  
+            14,453      page-faults               #    0.123 K/sec                  
+   335,764,101,215      cycles                    #    2.856 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,678,214,028      instructions              #    1.51  insns per cycle        
+    17,369,306,813      branches                  #  147.740 M/sec                  
+         5,173,995      branch-misses             #    0.03% of all branches        
+
+      58.891765274 seconds time elapsed
+
+# started on Mon Sep 17 18:30:30 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 3':
+
+     123584.511029      task-clock (msec)         #    2.980 CPUs utilized          
+               200      context-switches          #    0.002 K/sec                  
+                 3      cpu-migrations            #    0.000 K/sec                  
+            14,453      page-faults               #    0.117 K/sec                  
+   331,606,237,371      cycles                    #    2.683 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,689,324,694      instructions              #    1.53  insns per cycle        
+    17,372,221,688      branches                  #  140.570 M/sec                  
+         5,206,635      branch-misses             #    0.03% of all branches        
+
+      41.466819916 seconds time elapsed
+
+# started on Mon Sep 17 18:31:52 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 4':
+
+     126765.122908      task-clock (msec)         #    3.976 CPUs utilized          
+               164      context-switches          #    0.001 K/sec                  
+                 3      cpu-migrations            #    0.000 K/sec                  
+            14,455      page-faults               #    0.114 K/sec                  
+   338,709,238,586      cycles                    #    2.672 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,689,853,832      instructions              #    1.50  insns per cycle        
+    17,372,835,028      branches                  #  137.047 M/sec                  
+         5,176,977      branch-misses             #    0.03% of all branches        
+
+      31.886121261 seconds time elapsed
+
+# started on Mon Sep 17 18:32:56 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 5':
+
+     141705.530531      task-clock (msec)         #    4.967 CPUs utilized          
+               194      context-switches          #    0.001 K/sec                  
+                 4      cpu-migrations            #    0.000 K/sec                  
+            14,456      page-faults               #    0.102 K/sec                  
+   325,062,929,734      cycles                    #    2.294 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,709,623,636      instructions              #    1.56  insns per cycle        
+    17,376,442,913      branches                  #  122.624 M/sec                  
+         5,289,581      branch-misses             #    0.03% of all branches        
+
+      28.529928691 seconds time elapsed
+
+# started on Mon Sep 17 18:33:54 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 6':
+
+     144343.575462      task-clock (msec)         #    5.772 CPUs utilized          
+               446      context-switches          #    0.003 K/sec                  
+                 6      cpu-migrations            #    0.000 K/sec                  
+            14,461      page-faults               #    0.100 K/sec                  
+   332,289,543,638      cycles                    #    2.302 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,724,617,439      instructions              #    1.53  insns per cycle        
+    17,380,438,484      branches                  #  120.410 M/sec                  
+         5,359,927      branch-misses             #    0.03% of all branches        
+
+      25.009486119 seconds time elapsed
+
+# started on Mon Sep 17 18:34:42 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 7':
+
+     141686.947649      task-clock (msec)         #    6.928 CPUs utilized          
+               572      context-switches          #    0.004 K/sec                  
+                 6      cpu-migrations            #    0.000 K/sec                  
+            14,463      page-faults               #    0.102 K/sec                  
+   324,705,968,612      cycles                    #    2.292 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,722,796,957      instructions              #    1.56  insns per cycle        
+    17,379,854,064      branches                  #  122.664 M/sec                  
+         5,348,471      branch-misses             #    0.03% of all branches        
+
+      20.452178558 seconds time elapsed
+
+# started on Mon Sep 17 18:35:23 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 8':
+
+     148177.444938      task-clock (msec)         #    7.815 CPUs utilized          
+               432      context-switches          #    0.003 K/sec                  
+                13      cpu-migrations            #    0.000 K/sec                  
+            14,466      page-faults               #    0.098 K/sec                  
+   336,643,755,715      cycles                    #    2.272 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,745,829,326      instructions              #    1.51  insns per cycle        
+    17,386,142,709      branches                  #  117.333 M/sec                  
+         5,392,371      branch-misses             #    0.03% of all branches        
+
+      18.960800173 seconds time elapsed
+
+# started on Mon Sep 17 18:36:01 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 9':
+
+     148605.783529      task-clock (msec)         #    8.294 CPUs utilized          
+               219      context-switches          #    0.001 K/sec                  
+                13      cpu-migrations            #    0.000 K/sec                  
+            14,468      page-faults               #    0.097 K/sec                  
+   332,535,453,443      cycles                    #    2.238 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,764,216,946      instructions              #    1.53  insns per cycle        
+    17,391,545,472      branches                  #  117.031 M/sec                  
+         5,383,811      branch-misses             #    0.03% of all branches        
+
+      17.918183658 seconds time elapsed
+
+# started on Mon Sep 17 18:36:36 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 10':
+
+     148219.408573      task-clock (msec)         #    9.669 CPUs utilized          
+               394      context-switches          #    0.003 K/sec                  
+                14      cpu-migrations            #    0.000 K/sec                  
+            14,470      page-faults               #    0.098 K/sec                  
+   327,370,551,883      cycles                    #    2.209 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,748,060,330      instructions              #    1.55  insns per cycle        
+    17,386,699,570      branches                  #  117.304 M/sec                  
+         5,394,279      branch-misses             #    0.03% of all branches        
+
+      15.329221585 seconds time elapsed
+
+# started on Mon Sep 17 18:37:07 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 11':
+
+     151860.336027      task-clock (msec)         #    9.740 CPUs utilized          
+               308      context-switches          #    0.002 K/sec                  
+                40      cpu-migrations            #    0.000 K/sec                  
+            14,470      page-faults               #    0.095 K/sec                  
+   336,437,975,141      cycles                    #    2.215 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,762,774,935      instructions              #    1.51  insns per cycle        
+    17,390,639,948      branches                  #  114.517 M/sec                  
+         5,469,008      branch-misses             #    0.03% of all branches        
+
+      15.591264405 seconds time elapsed
+
+# started on Mon Sep 17 18:37:39 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 12':
+
+     162116.455111      task-clock (msec)         #   10.120 CPUs utilized          
+               390      context-switches          #    0.002 K/sec                  
+                49      cpu-migrations            #    0.000 K/sec                  
+            14,472      page-faults               #    0.089 K/sec                  
+   359,381,494,889      cycles                    #    2.217 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,777,156,186      instructions              #    1.41  insns per cycle        
+    17,393,713,952      branches                  #  107.291 M/sec                  
+         5,611,989      branch-misses             #    0.03% of all branches        
+
+      16.019876860 seconds time elapsed
+
+# started on Mon Sep 17 18:38:10 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 13':
+
+     167591.592939      task-clock (msec)         #   11.675 CPUs utilized          
+               373      context-switches          #    0.002 K/sec                  
+                53      cpu-migrations            #    0.000 K/sec                  
+            14,476      page-faults               #    0.086 K/sec                  
+   369,940,923,999      cycles                    #    2.207 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,795,779,640      instructions              #    1.37  insns per cycle        
+    17,398,598,030      branches                  #  103.815 M/sec                  
+         5,714,751      branch-misses             #    0.03% of all branches        
+
+      14.354260274 seconds time elapsed
+
+# started on Mon Sep 17 18:38:39 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 14':
+
+     176803.320667      task-clock (msec)         #   12.540 CPUs utilized          
+               537      context-switches          #    0.003 K/sec                  
+                49      cpu-migrations            #    0.000 K/sec                  
+            14,479      page-faults               #    0.082 K/sec                  
+   390,183,756,319      cycles                    #    2.207 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,817,157,352      instructions              #    1.30  insns per cycle        
+    17,403,714,070      branches                  #   98.435 M/sec                  
+         5,875,316      branch-misses             #    0.03% of all branches        
+
+      14.099370436 seconds time elapsed
+
+# started on Mon Sep 17 18:39:08 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 15':
+
+     183157.661031      task-clock (msec)         #   13.410 CPUs utilized          
+               615      context-switches          #    0.003 K/sec                  
+                56      cpu-migrations            #    0.000 K/sec                  
+            14,481      page-faults               #    0.079 K/sec                  
+   404,358,061,317      cycles                    #    2.208 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,832,208,457      instructions              #    1.26  insns per cycle        
+    17,407,379,459      branches                  #   95.040 M/sec                  
+         5,945,477      branch-misses             #    0.03% of all branches        
+
+      13.658106622 seconds time elapsed
+
+# started on Mon Sep 17 18:39:35 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 16':
+
+     189081.785824      task-clock (msec)         #   14.513 CPUs utilized          
+               577      context-switches          #    0.003 K/sec                  
+                56      cpu-migrations            #    0.000 K/sec                  
+            14,482      page-faults               #    0.077 K/sec                  
+   416,210,884,735      cycles                    #    2.201 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,854,145,625      instructions              #    1.22  insns per cycle        
+    17,413,142,785      branches                  #   92.093 M/sec                  
+         6,067,251      branch-misses             #    0.03% of all branches        
+
+      13.028228287 seconds time elapsed
+
+# started on Mon Sep 17 18:40:00 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 17':
+
+     196531.371703      task-clock (msec)         #   15.283 CPUs utilized          
+               585      context-switches          #    0.003 K/sec                  
+                48      cpu-migrations            #    0.000 K/sec                  
+            14,484      page-faults               #    0.074 K/sec                  
+   432,332,264,495      cycles                    #    2.200 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,850,752,618      instructions              #    1.17  insns per cycle        
+    17,411,348,430      branches                  #   88.593 M/sec                  
+         6,146,501      branch-misses             #    0.04% of all branches        
+
+      12.859196354 seconds time elapsed
+
+# started on Mon Sep 17 18:40:26 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 18':
+
+     208906.532863      task-clock (msec)         #   16.680 CPUs utilized          
+               611      context-switches          #    0.003 K/sec                  
+                50      cpu-migrations            #    0.000 K/sec                  
+            14,484      page-faults               #    0.069 K/sec                  
+   459,937,510,030      cycles                    #    2.202 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,873,443,274      instructions              #    1.10  insns per cycle        
+    17,416,769,604      branches                  #   83.371 M/sec                  
+         6,298,098      branch-misses             #    0.04% of all branches        
+
+      12.524118227 seconds time elapsed
+
+# started on Mon Sep 17 18:40:51 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 19':
+
+     215880.892183      task-clock (msec)         #   17.849 CPUs utilized          
+               663      context-switches          #    0.003 K/sec                  
+                56      cpu-migrations            #    0.000 K/sec                  
+            14,490      page-faults               #    0.067 K/sec                  
+   474,151,733,581      cycles                    #    2.196 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,911,317,154      instructions              #    1.07  insns per cycle        
+    17,426,844,787      branches                  #   80.724 M/sec                  
+         6,374,590      branch-misses             #    0.04% of all branches        
+
+      12.094548890 seconds time elapsed
+
+# started on Mon Sep 17 18:41:15 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 20':
+
+     235294.450320      task-clock (msec)         #   19.571 CPUs utilized          
+               831      context-switches          #    0.004 K/sec                  
+                46      cpu-migrations            #    0.000 K/sec                  
+            14,491      page-faults               #    0.062 K/sec                  
+   516,563,640,935      cycles                    #    2.195 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,918,302,908      instructions              #    0.98  insns per cycle        
+    17,427,207,861      branches                  #   74.066 M/sec                  
+         6,552,504      branch-misses             #    0.04% of all branches        
+
+      12.022421600 seconds time elapsed
+
+# started on Mon Sep 17 18:41:39 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 21':
+
+     221727.980857      task-clock (msec)         #   18.820 CPUs utilized          
+             1,337      context-switches          #    0.006 K/sec                  
+               136      cpu-migrations            #    0.001 K/sec                  
+            14,492      page-faults               #    0.065 K/sec                  
+   487,017,636,160      cycles                    #    2.196 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,781,899,541      instructions              #    1.04  insns per cycle        
+    17,389,185,264      branches                  #   78.426 M/sec                  
+         6,466,999      branch-misses             #    0.04% of all branches        
+
+      11.781586930 seconds time elapsed
+
+# started on Mon Sep 17 18:42:03 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 22':
+
+     217567.542697      task-clock (msec)         #   18.489 CPUs utilized          
+             2,011      context-switches          #    0.009 K/sec                  
+               231      cpu-migrations            #    0.001 K/sec                  
+            14,496      page-faults               #    0.067 K/sec                  
+   478,411,958,466      cycles                    #    2.199 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,780,528,189      instructions              #    1.06  insns per cycle        
+    17,389,002,797      branches                  #   79.925 M/sec                  
+         6,461,933      branch-misses             #    0.04% of all branches        
+
+      11.767662160 seconds time elapsed
+
+# started on Mon Sep 17 18:42:26 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 23':
+
+     216717.521542      task-clock (msec)         #   17.976 CPUs utilized          
+             3,001      context-switches          #    0.014 K/sec                  
+               252      cpu-migrations            #    0.001 K/sec                  
+            14,499      page-faults               #    0.067 K/sec                  
+   477,102,918,971      cycles                    #    2.201 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,787,544,455      instructions              #    1.06  insns per cycle        
+    17,390,223,492      branches                  #   80.244 M/sec                  
+         6,551,696      branch-misses             #    0.04% of all branches        
+
+      12.055866297 seconds time elapsed
+
+# started on Mon Sep 17 18:42:49 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 24':
+
+     213601.568907      task-clock (msec)         #   18.007 CPUs utilized          
+             3,810      context-switches          #    0.018 K/sec                  
+               311      cpu-migrations            #    0.001 K/sec                  
+            14,499      page-faults               #    0.068 K/sec                  
+   470,827,751,005      cycles                    #    2.204 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,788,277,205      instructions              #    1.08  insns per cycle        
+    17,390,411,638      branches                  #   81.415 M/sec                  
+         6,562,653      branch-misses             #    0.04% of all branches        
+
+      11.862010690 seconds time elapsed
+
+# started on Mon Sep 17 18:43:13 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 25':
+
+     215003.779407      task-clock (msec)         #   19.168 CPUs utilized          
+             4,276      context-switches          #    0.020 K/sec                  
+               361      cpu-migrations            #    0.002 K/sec                  
+            14,500      page-faults               #    0.067 K/sec                  
+   472,023,918,167      cycles                    #    2.195 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,790,720,348      instructions              #    1.08  insns per cycle        
+    17,390,965,109      branches                  #   80.887 M/sec                  
+         6,565,381      branch-misses             #    0.04% of all branches        
+
+      11.216665283 seconds time elapsed
+
+# started on Mon Sep 17 18:43:35 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 26':
+
+     213663.200186      task-clock (msec)         #   18.187 CPUs utilized          
+             4,237      context-switches          #    0.020 K/sec                  
+               402      cpu-migrations            #    0.002 K/sec                  
+            14,505      page-faults               #    0.068 K/sec                  
+   469,449,797,222      cycles                    #    2.197 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,783,587,356      instructions              #    1.08  insns per cycle        
+    17,389,736,953      branches                  #   81.389 M/sec                  
+         6,432,463      branch-misses             #    0.04% of all branches        
+
+      11.748412607 seconds time elapsed
+
+# started on Mon Sep 17 18:43:59 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 27':
+
+     213768.605576      task-clock (msec)         #   18.568 CPUs utilized          
+             4,853      context-switches          #    0.023 K/sec                  
+               422      cpu-migrations            #    0.002 K/sec                  
+            14,506      page-faults               #    0.068 K/sec                  
+   469,819,324,957      cycles                    #    2.198 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,785,741,976      instructions              #    1.08  insns per cycle        
+    17,390,203,424      branches                  #   81.351 M/sec                  
+         6,438,390      branch-misses             #    0.04% of all branches        
+
+      11.512728482 seconds time elapsed
+
+# started on Mon Sep 17 18:44:22 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 28':
+
+     211820.309625      task-clock (msec)         #   18.211 CPUs utilized          
+             5,327      context-switches          #    0.025 K/sec                  
+               443      cpu-migrations            #    0.002 K/sec                  
+            14,507      page-faults               #    0.068 K/sec                  
+   465,613,945,231      cycles                    #    2.198 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,784,649,293      instructions              #    1.09  insns per cycle        
+    17,390,009,423      branches                  #   82.098 M/sec                  
+         6,414,516      branch-misses             #    0.04% of all branches        
+
+      11.631572998 seconds time elapsed
+
+# started on Mon Sep 17 18:44:45 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 29':
+
+     213831.014934      task-clock (msec)         #   18.932 CPUs utilized          
+             6,060      context-switches          #    0.028 K/sec                  
+               554      cpu-migrations            #    0.003 K/sec                  
+            14,510      page-faults               #    0.068 K/sec                  
+   469,448,167,379      cycles                    #    2.195 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,789,356,935      instructions              #    1.08  insns per cycle        
+    17,390,968,606      branches                  #   81.330 M/sec                  
+         6,442,572      branch-misses             #    0.04% of all branches        
+
+      11.294737423 seconds time elapsed
+
+# started on Mon Sep 17 18:45:08 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 30':
+
+     213063.653587      task-clock (msec)         #   18.229 CPUs utilized          
+             6,246      context-switches          #    0.029 K/sec                  
+               492      cpu-migrations            #    0.002 K/sec                  
+            14,509      page-faults               #    0.068 K/sec                  
+   468,821,136,410      cycles                    #    2.200 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,789,080,595      instructions              #    1.08  insns per cycle        
+    17,390,864,649      branches                  #   81.623 M/sec                  
+         6,434,799      branch-misses             #    0.04% of all branches        
+
+      11.687929072 seconds time elapsed
+
+# started on Mon Sep 17 18:45:32 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 31':
+
+     213513.324886      task-clock (msec)         #   18.480 CPUs utilized          
+             6,789      context-switches          #    0.032 K/sec                  
+               583      cpu-migrations            #    0.003 K/sec                  
+            14,514      page-faults               #    0.068 K/sec                  
+   469,715,076,542      cycles                    #    2.200 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,791,396,557      instructions              #    1.08  insns per cycle        
+    17,391,405,503      branches                  #   81.453 M/sec                  
+         6,486,837      branch-misses             #    0.04% of all branches        
+
+      11.553953468 seconds time elapsed
+
+# started on Mon Sep 17 18:45:55 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 32':
+
+     213483.979228      task-clock (msec)         #   19.126 CPUs utilized          
+             7,931      context-switches          #    0.037 K/sec                  
+               592      cpu-migrations            #    0.003 K/sec                  
+            14,516      page-faults               #    0.068 K/sec                  
+   468,618,738,159      cycles                    #    2.195 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,794,537,638      instructions              #    1.08  insns per cycle        
+    17,392,046,200      branches                  #   81.468 M/sec                  
+         6,491,679      branch-misses             #    0.04% of all branches        
+
+      11.161738003 seconds time elapsed
+
+# started on Mon Sep 17 18:46:17 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 33':
+
+     213553.739067      task-clock (msec)         #   18.976 CPUs utilized          
+             8,092      context-switches          #    0.038 K/sec                  
+               672      cpu-migrations            #    0.003 K/sec                  
+            14,520      page-faults               #    0.068 K/sec                  
+   469,195,508,390      cycles                    #    2.197 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,795,132,190      instructions              #    1.08  insns per cycle        
+    17,392,184,833      branches                  #   81.442 M/sec                  
+         6,485,353      branch-misses             #    0.04% of all branches        
+
+      11.254105270 seconds time elapsed
+
+# started on Mon Sep 17 18:46:40 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 34':
+
+     212892.544263      task-clock (msec)         #   18.810 CPUs utilized          
+             8,536      context-switches          #    0.040 K/sec                  
+               602      cpu-migrations            #    0.003 K/sec                  
+            14,521      page-faults               #    0.068 K/sec                  
+   467,714,051,705      cycles                    #    2.197 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,795,466,488      instructions              #    1.09  insns per cycle        
+    17,392,245,276      branches                  #   81.695 M/sec                  
+         6,479,435      branch-misses             #    0.04% of all branches        
+
+      11.318258401 seconds time elapsed
+
+# started on Mon Sep 17 18:47:02 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 35':
+
+     213421.733979      task-clock (msec)         #   19.193 CPUs utilized          
+             9,521      context-switches          #    0.045 K/sec                  
+               586      cpu-migrations            #    0.003 K/sec                  
+            14,523      page-faults               #    0.068 K/sec                  
+   468,890,356,995      cycles                    #    2.197 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,798,303,820      instructions              #    1.08  insns per cycle        
+    17,392,898,090      branches                  #   81.495 M/sec                  
+         6,514,295      branch-misses             #    0.04% of all branches        
+
+      11.119517263 seconds time elapsed
+
+# started on Mon Sep 17 18:47:25 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 36':
+
+     213431.133538      task-clock (msec)         #   19.144 CPUs utilized          
+             9,992      context-switches          #    0.047 K/sec                  
+               761      cpu-migrations            #    0.004 K/sec                  
+            14,523      page-faults               #    0.068 K/sec                  
+   468,696,562,432      cycles                    #    2.196 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,799,692,342      instructions              #    1.08  insns per cycle        
+    17,393,162,226      branches                  #   81.493 M/sec                  
+         6,519,823      branch-misses             #    0.04% of all branches        
+
+      11.149006547 seconds time elapsed
+
+# started on Mon Sep 17 18:47:47 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 37':
+
+     213096.843889      task-clock (msec)         #   19.066 CPUs utilized          
+            10,301      context-switches          #    0.048 K/sec                  
+               611      cpu-migrations            #    0.003 K/sec                  
+            14,529      page-faults               #    0.068 K/sec                  
+   468,041,903,220      cycles                    #    2.196 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,799,748,468      instructions              #    1.08  insns per cycle        
+    17,393,201,813      branches                  #   81.621 M/sec                  
+         6,482,172      branch-misses             #    0.04% of all branches        
+
+      11.176789430 seconds time elapsed
+
+# started on Mon Sep 17 18:48:09 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 38':
+
+     211894.069446      task-clock (msec)         #   19.104 CPUs utilized          
+            11,083      context-switches          #    0.052 K/sec                  
+               504      cpu-migrations            #    0.002 K/sec                  
+            14,530      page-faults               #    0.069 K/sec                  
+   465,492,829,277      cycles                    #    2.197 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,800,107,176      instructions              #    1.09  insns per cycle        
+    17,393,328,204      branches                  #   82.085 M/sec                  
+         6,498,039      branch-misses             #    0.04% of all branches        
+
+      11.091622516 seconds time elapsed
+
+# started on Mon Sep 17 18:48:32 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 39':
+
+     213682.167824      task-clock (msec)         #   19.209 CPUs utilized          
+            12,098      context-switches          #    0.057 K/sec                  
+               402      cpu-migrations            #    0.002 K/sec                  
+            14,533      page-faults               #    0.068 K/sec                  
+   469,338,010,533      cycles                    #    2.196 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,804,375,664      instructions              #    1.08  insns per cycle        
+    17,394,216,887      branches                  #   81.402 M/sec                  
+         6,491,791      branch-misses             #    0.04% of all branches        
+
+      11.124129691 seconds time elapsed
+
+# started on Mon Sep 17 18:48:54 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 40':
+
+     212250.087007      task-clock (msec)         #   19.218 CPUs utilized          
+            12,205      context-switches          #    0.058 K/sec                  
+               427      cpu-migrations            #    0.002 K/sec                  
+            14,533      page-faults               #    0.068 K/sec                  
+   466,154,475,665      cycles                    #    2.196 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,803,101,534      instructions              #    1.09  insns per cycle        
+    17,394,006,947      branches                  #   81.951 M/sec                  
+         6,486,876      branch-misses             #    0.04% of all branches        
+
+      11.044454131 seconds time elapsed
+
+# started on Mon Sep 17 18:49:16 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 41':
+
+     212450.068177      task-clock (msec)         #   18.838 CPUs utilized          
+            12,228      context-switches          #    0.058 K/sec                  
+               560      cpu-migrations            #    0.003 K/sec                  
+            14,535      page-faults               #    0.068 K/sec                  
+   466,701,344,646      cycles                    #    2.197 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,803,938,813      instructions              #    1.09  insns per cycle        
+    17,394,137,007      branches                  #   81.874 M/sec                  
+         6,508,302      branch-misses             #    0.04% of all branches        
+
+      11.277532234 seconds time elapsed
+
+# started on Mon Sep 17 18:49:38 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 42':
+
+     214080.732281      task-clock (msec)         #   19.109 CPUs utilized          
+            12,522      context-switches          #    0.058 K/sec                  
+               693      cpu-migrations            #    0.003 K/sec                  
+            14,539      page-faults               #    0.068 K/sec                  
+   469,918,398,023      cycles                    #    2.195 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,806,703,740      instructions              #    1.08  insns per cycle        
+    17,394,693,577      branches                  #   81.253 M/sec                  
+         6,534,181      branch-misses             #    0.04% of all branches        
+
+      11.202891427 seconds time elapsed
+
+# started on Mon Sep 17 18:50:01 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 43':
+
+     213324.822973      task-clock (msec)         #   19.088 CPUs utilized          
+            12,551      context-switches          #    0.059 K/sec                  
+               806      cpu-migrations            #    0.004 K/sec                  
+            14,543      page-faults               #    0.068 K/sec                  
+   468,404,418,476      cycles                    #    2.196 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,806,403,520      instructions              #    1.08  insns per cycle        
+    17,394,642,677      branches                  #   81.541 M/sec                  
+         6,536,974      branch-misses             #    0.04% of all branches        
+
+      11.175804084 seconds time elapsed
+
+# started on Mon Sep 17 18:50:23 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 44':
+
+     213368.537350      task-clock (msec)         #   19.222 CPUs utilized          
+            13,107      context-switches          #    0.061 K/sec                  
+               685      cpu-migrations            #    0.003 K/sec                  
+            14,543      page-faults               #    0.068 K/sec                  
+   468,488,922,808      cycles                    #    2.196 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,807,631,753      instructions              #    1.08  insns per cycle        
+    17,394,912,951      branches                  #   81.525 M/sec                  
+         6,523,147      branch-misses             #    0.04% of all branches        
+
+      11.100512907 seconds time elapsed
+
+# started on Mon Sep 17 18:50:45 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 45':
+
+     213902.881612      task-clock (msec)         #   19.179 CPUs utilized          
+            13,438      context-switches          #    0.063 K/sec                  
+               718      cpu-migrations            #    0.003 K/sec                  
+            14,546      page-faults               #    0.068 K/sec                  
+   469,556,394,479      cycles                    #    2.195 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,809,151,221      instructions              #    1.08  insns per cycle        
+    17,395,223,381      branches                  #   81.323 M/sec                  
+         6,567,315      branch-misses             #    0.04% of all branches        
+
+      11.152890257 seconds time elapsed
+
+# started on Mon Sep 17 18:51:08 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 46':
+
+     213535.111182      task-clock (msec)         #   19.307 CPUs utilized          
+            14,437      context-switches          #    0.068 K/sec                  
+               730      cpu-migrations            #    0.003 K/sec                  
+            14,545      page-faults               #    0.068 K/sec                  
+   468,644,290,649      cycles                    #    2.195 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,810,776,476      instructions              #    1.08  insns per cycle        
+    17,395,588,901      branches                  #   81.465 M/sec                  
+         6,565,899      branch-misses             #    0.04% of all branches        
+
+      11.059961572 seconds time elapsed
+
+# started on Mon Sep 17 18:51:30 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 47':
+
+     213951.401316      task-clock (msec)         #   19.318 CPUs utilized          
+            14,397      context-switches          #    0.067 K/sec                  
+               744      cpu-migrations            #    0.003 K/sec                  
+            14,550      page-faults               #    0.068 K/sec                  
+   469,579,711,271      cycles                    #    2.195 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,811,937,469      instructions              #    1.08  insns per cycle        
+    17,395,797,972      branches                  #   81.307 M/sec                  
+         6,568,609      branch-misses             #    0.04% of all branches        
+
+      11.075150908 seconds time elapsed
+
+# started on Mon Sep 17 18:51:52 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 48':
+
+     213620.340546      task-clock (msec)         #   19.158 CPUs utilized          
+            14,622      context-switches          #    0.068 K/sec                  
+               791      cpu-migrations            #    0.004 K/sec                  
+            14,551      page-faults               #    0.068 K/sec                  
+   469,124,876,369      cycles                    #    2.196 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,811,719,328      instructions              #    1.08  insns per cycle        
+    17,395,776,972      branches                  #   81.433 M/sec                  
+         6,553,128      branch-misses             #    0.04% of all branches        
+
+      11.150683844 seconds time elapsed
+
+# started on Mon Sep 17 18:52:14 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 49':
+
+     213166.810327      task-clock (msec)         #   19.281 CPUs utilized          
+            14,904      context-switches          #    0.070 K/sec                  
+               832      cpu-migrations            #    0.004 K/sec                  
+            14,554      page-faults               #    0.068 K/sec                  
+   467,844,259,839      cycles                    #    2.195 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,812,243,912      instructions              #    1.09  insns per cycle        
+    17,395,894,939      branches                  #   81.607 M/sec                  
+         6,555,960      branch-misses             #    0.04% of all branches        
+
+      11.055626840 seconds time elapsed
+
+# started on Mon Sep 17 18:52:36 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 50':
+
+     213128.064048      task-clock (msec)         #   19.210 CPUs utilized          
+            15,333      context-switches          #    0.072 K/sec                  
+               786      cpu-migrations            #    0.004 K/sec                  
+            14,557      page-faults               #    0.068 K/sec                  
+   467,714,219,221      cycles                    #    2.195 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,813,441,935      instructions              #    1.09  insns per cycle        
+    17,396,158,174      branches                  #   81.623 M/sec                  
+         6,550,857      branch-misses             #    0.04% of all branches        
+
+      11.094531088 seconds time elapsed
+
+# started on Mon Sep 17 18:52:59 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 51':
+
+     213492.052745      task-clock (msec)         #   19.399 CPUs utilized          
+            15,947      context-switches          #    0.075 K/sec                  
+               743      cpu-migrations            #    0.003 K/sec                  
+            14,557      page-faults               #    0.068 K/sec                  
+   468,517,529,013      cycles                    #    2.195 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,820,359,534      instructions              #    1.08  insns per cycle        
+    17,397,376,119      branches                  #   81.490 M/sec                  
+         6,660,662      branch-misses             #    0.04% of all branches        
+
+      11.005132785 seconds time elapsed
+
+# started on Mon Sep 17 18:53:21 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 52':
+
+     213629.086059      task-clock (msec)         #   19.314 CPUs utilized          
+            16,567      context-switches          #    0.078 K/sec                  
+               908      cpu-migrations            #    0.004 K/sec                  
+            14,559      page-faults               #    0.068 K/sec                  
+   468,917,469,888      cycles                    #    2.195 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,822,032,294      instructions              #    1.08  insns per cycle        
+    17,397,747,774      branches                  #   81.439 M/sec                  
+         6,649,970      branch-misses             #    0.04% of all branches        
+
+      11.060712733 seconds time elapsed
+
+# started on Mon Sep 17 18:53:43 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 53':
+
+     213781.365948      task-clock (msec)         #   19.465 CPUs utilized          
+            16,258      context-switches          #    0.076 K/sec                  
+               813      cpu-migrations            #    0.004 K/sec                  
+            14,560      page-faults               #    0.068 K/sec                  
+   469,098,868,605      cycles                    #    2.194 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,824,228,066      instructions              #    1.08  insns per cycle        
+    17,398,973,394      branches                  #   81.387 M/sec                  
+         6,682,428      branch-misses             #    0.04% of all branches        
+
+      10.982598708 seconds time elapsed
+
+# started on Mon Sep 17 18:54:05 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 54':
+
+     214529.824974      task-clock (msec)         #   19.303 CPUs utilized          
+            16,935      context-switches          #    0.079 K/sec                  
+               986      cpu-migrations            #    0.005 K/sec                  
+            14,564      page-faults               #    0.068 K/sec                  
+   470,806,213,755      cycles                    #    2.195 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,819,617,489      instructions              #    1.08  insns per cycle        
+    17,397,418,344      branches                  #   81.096 M/sec                  
+         6,623,206      branch-misses             #    0.04% of all branches        
+
+      11.113858054 seconds time elapsed
+
+# started on Mon Sep 17 18:54:27 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 55':
+
+     214790.539928      task-clock (msec)         #   19.422 CPUs utilized          
+            16,743      context-switches          #    0.078 K/sec                  
+             1,081      cpu-migrations            #    0.005 K/sec                  
+            14,569      page-faults               #    0.068 K/sec                  
+   471,382,838,062      cycles                    #    2.195 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,818,478,079      instructions              #    1.08  insns per cycle        
+    17,397,184,231      branches                  #   80.996 M/sec                  
+         6,569,259      branch-misses             #    0.04% of all branches        
+
+      11.059007950 seconds time elapsed
+
+# started on Mon Sep 17 18:54:49 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 56':
+
+     213573.041452      task-clock (msec)         #   19.339 CPUs utilized          
+            17,612      context-switches          #    0.082 K/sec                  
+             1,133      cpu-migrations            #    0.005 K/sec                  
+            14,570      page-faults               #    0.068 K/sec                  
+   468,670,943,568      cycles                    #    2.194 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,820,171,279      instructions              #    1.08  insns per cycle        
+    17,397,591,029      branches                  #   81.460 M/sec                  
+         6,590,964      branch-misses             #    0.04% of all branches        
+
+      11.043862404 seconds time elapsed
+
+# started on Mon Sep 17 18:55:11 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 57':
+
+     214476.848313      task-clock (msec)         #   19.491 CPUs utilized          
+            17,863      context-switches          #    0.083 K/sec                  
+             1,138      cpu-migrations            #    0.005 K/sec                  
+            14,572      page-faults               #    0.068 K/sec                  
+   470,550,232,453      cycles                    #    2.194 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,821,299,970      instructions              #    1.08  insns per cycle        
+    17,397,828,168      branches                  #   81.118 M/sec                  
+         6,633,727      branch-misses             #    0.04% of all branches        
+
+      11.004081011 seconds time elapsed
+
+# started on Mon Sep 17 18:55:33 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 58':
+
+     214703.152642      task-clock (msec)         #   19.437 CPUs utilized          
+            18,402      context-switches          #    0.086 K/sec                  
+             1,170      cpu-migrations            #    0.005 K/sec                  
+            14,574      page-faults               #    0.068 K/sec                  
+   471,124,745,239      cycles                    #    2.194 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,822,863,521      instructions              #    1.08  insns per cycle        
+    17,398,164,783      branches                  #   81.034 M/sec                  
+         6,613,053      branch-misses             #    0.04% of all branches        
+
+      11.046307811 seconds time elapsed
+
+# started on Mon Sep 17 18:55:55 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 59':
+
+     213821.776190      task-clock (msec)         #   19.482 CPUs utilized          
+            18,584      context-switches          #    0.087 K/sec                  
+             1,333      cpu-migrations            #    0.006 K/sec                  
+            14,574      page-faults               #    0.068 K/sec                  
+   469,220,603,328      cycles                    #    2.194 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,822,795,892      instructions              #    1.08  insns per cycle        
+    17,398,161,577      branches                  #   81.368 M/sec                  
+         6,632,058      branch-misses             #    0.04% of all branches        
+
+      10.975366003 seconds time elapsed
+
+# started on Mon Sep 17 18:56:17 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 60':
+
+     211860.074677      task-clock (msec)         #   19.323 CPUs utilized          
+            18,400      context-switches          #    0.087 K/sec                  
+               724      cpu-migrations            #    0.003 K/sec                  
+            14,578      page-faults               #    0.069 K/sec                  
+   465,076,248,842      cycles                    #    2.195 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,818,669,858      instructions              #    1.09  insns per cycle        
+    17,397,380,590      branches                  #   82.117 M/sec                  
+         6,566,000      branch-misses             #    0.04% of all branches        
+
+      10.964353927 seconds time elapsed
+
+# started on Mon Sep 17 18:56:39 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 61':
+
+     216872.544704      task-clock (msec)         #   19.377 CPUs utilized          
+            19,204      context-switches          #    0.089 K/sec                  
+             1,391      cpu-migrations            #    0.006 K/sec                  
+            14,580      page-faults               #    0.067 K/sec                  
+   475,951,378,539      cycles                    #    2.195 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,826,902,836      instructions              #    1.07  insns per cycle        
+    17,399,003,670      branches                  #   80.227 M/sec                  
+         6,575,049      branch-misses             #    0.04% of all branches        
+
+      11.192334884 seconds time elapsed
+
+# started on Mon Sep 17 18:57:01 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 62':
+
+     214489.508806      task-clock (msec)         #   19.493 CPUs utilized          
+            19,528      context-switches          #    0.091 K/sec                  
+             1,015      cpu-migrations            #    0.005 K/sec                  
+            14,584      page-faults               #    0.068 K/sec                  
+   470,576,447,430      cycles                    #    2.194 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,824,990,150      instructions              #    1.08  insns per cycle        
+    17,398,655,726      branches                  #   81.117 M/sec                  
+         6,613,084      branch-misses             #    0.04% of all branches        
+
+      11.003338892 seconds time elapsed
+
+# started on Mon Sep 17 18:57:23 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 63':
+
+     213228.299419      task-clock (msec)         #   19.420 CPUs utilized          
+            19,578      context-switches          #    0.092 K/sec                  
+               976      cpu-migrations            #    0.005 K/sec                  
+            14,585      page-faults               #    0.068 K/sec                  
+   467,820,927,809      cycles                    #    2.194 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,823,816,458      instructions              #    1.09  insns per cycle        
+    17,398,473,920      branches                  #   81.596 M/sec                  
+         6,602,213      branch-misses             #    0.04% of all branches        
+
+      10.979878360 seconds time elapsed
+
+# started on Mon Sep 17 18:57:45 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 64':
+
+     216261.293799      task-clock (msec)         #   19.429 CPUs utilized          
+            20,244      context-switches          #    0.094 K/sec                  
+               959      cpu-migrations            #    0.004 K/sec                  
+            14,584      page-faults               #    0.067 K/sec                  
+   474,581,426,517      cycles                    #    2.194 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+   507,827,609,082      instructions              #    1.07  insns per cycle        
+    17,399,172,879      branches                  #   80.454 M/sec                  
+         6,573,704      branch-misses             #    0.04% of all branches        
+
+      11.130955256 seconds time elapsed
+

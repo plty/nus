@@ -1,0 +1,768 @@
+# started on Mon Sep 17 18:26:46 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 1':
+
+       549,865,674      cache-references                                            
+       136,541,429      cache-misses              #   24.832 % of all cache refs    
+   302,867,143,693      cycles                                                      
+   507,651,194,051      instructions              #    1.68  insns per cycle        
+
+     105.542699582 seconds time elapsed
+
+# started on Mon Sep 17 18:29:30 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 2':
+
+       552,320,793      cache-references                                            
+       163,034,770      cache-misses              #   29.518 % of all cache refs    
+   337,740,494,696      cycles                                                      
+   507,676,693,105      instructions              #    1.50  insns per cycle        
+
+      59.471992086 seconds time elapsed
+
+# started on Mon Sep 17 18:31:11 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 3':
+
+       555,330,938      cache-references                                            
+       105,448,299      cache-misses              #   18.988 % of all cache refs    
+   329,809,653,652      cycles                                                      
+   507,695,790,134      instructions              #    1.54  insns per cycle        
+
+      41.124209738 seconds time elapsed
+
+# started on Mon Sep 17 18:32:24 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 4':
+
+       553,918,635      cache-references                                            
+        93,055,323      cache-misses              #   16.799 % of all cache refs    
+   335,267,308,217      cycles                                                      
+   507,689,660,515      instructions              #    1.51  insns per cycle        
+
+      32.378029427 seconds time elapsed
+
+# started on Mon Sep 17 18:33:25 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 5':
+
+       555,416,817      cache-references                                            
+        74,484,033      cache-misses              #   13.410 % of all cache refs    
+   325,403,321,237      cycles                                                      
+   507,715,588,816      instructions              #    1.56  insns per cycle        
+
+      28.545888212 seconds time elapsed
+
+# started on Mon Sep 17 18:34:19 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 6':
+
+       554,859,695      cache-references                                            
+        62,617,562      cache-misses              #   11.285 % of all cache refs    
+   326,064,188,420      cycles                                                      
+   507,716,075,585      instructions              #    1.56  insns per cycle        
+
+      23.878784166 seconds time elapsed
+
+# started on Mon Sep 17 18:35:03 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 7':
+
+       554,949,558      cache-references                                            
+        53,851,681      cache-misses              #    9.704 % of all cache refs    
+   325,828,740,589      cycles                                                      
+   507,718,858,733      instructions              #    1.56  insns per cycle        
+
+      20.495295477 seconds time elapsed
+
+# started on Mon Sep 17 18:35:42 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 8':
+
+       545,124,146      cache-references                                            
+        51,877,294      cache-misses              #    9.517 % of all cache refs    
+   329,424,229,773      cycles                                                      
+   507,736,273,096      instructions              #    1.54  insns per cycle        
+
+      18.991702570 seconds time elapsed
+
+# started on Mon Sep 17 18:36:19 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 9':
+
+       547,494,907      cache-references                                            
+        44,178,392      cache-misses              #    8.069 % of all cache refs    
+   326,598,217,126      cycles                                                      
+   507,740,117,012      instructions              #    1.55  insns per cycle        
+
+      17.159334860 seconds time elapsed
+
+# started on Mon Sep 17 18:36:52 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 10':
+
+       549,587,119      cache-references                                            
+        40,716,151      cache-misses              #    7.408 % of all cache refs    
+   327,233,432,455      cycles                                                      
+   507,755,770,220      instructions              #    1.55  insns per cycle        
+
+      15.509641695 seconds time elapsed
+
+# started on Mon Sep 17 18:37:23 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 11':
+
+       520,933,512      cache-references                                            
+        50,927,708      cache-misses              #    9.776 % of all cache refs    
+   350,829,288,076      cycles                                                      
+   507,789,421,419      instructions              #    1.45  insns per cycle        
+
+      16.399639672 seconds time elapsed
+
+# started on Mon Sep 17 18:37:55 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 12':
+
+       513,979,062      cache-references                                            
+        56,457,042      cache-misses              #   10.984 % of all cache refs    
+   364,723,421,497      cycles                                                      
+   507,801,040,323      instructions              #    1.39  insns per cycle        
+
+      14.877313739 seconds time elapsed
+
+# started on Mon Sep 17 18:38:25 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 13':
+
+       505,966,332      cache-references                                            
+        58,744,713      cache-misses              #   11.610 % of all cache refs    
+   373,528,932,401      cycles                                                      
+   507,790,588,574      instructions              #    1.36  insns per cycle        
+
+      14.540898983 seconds time elapsed
+
+# started on Mon Sep 17 18:38:53 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 14':
+
+       493,058,197      cache-references                                            
+        62,255,394      cache-misses              #   12.626 % of all cache refs    
+   394,982,108,129      cycles                                                      
+   507,803,234,691      instructions              #    1.29  insns per cycle        
+
+      14.329484044 seconds time elapsed
+
+# started on Mon Sep 17 18:39:21 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 15':
+
+       493,185,408      cache-references                                            
+        55,935,779      cache-misses              #   11.342 % of all cache refs    
+   401,459,158,562      cycles                                                      
+   507,823,109,605      instructions              #    1.26  insns per cycle        
+
+      13.352772090 seconds time elapsed
+
+# started on Mon Sep 17 18:39:48 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 16':
+
+       446,531,429      cache-references                                            
+        53,090,833      cache-misses              #   11.890 % of all cache refs    
+   416,195,441,111      cycles                                                      
+   507,846,783,520      instructions              #    1.22  insns per cycle        
+
+      12.606116058 seconds time elapsed
+
+# started on Mon Sep 17 18:40:13 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 17':
+
+       409,905,432      cache-references                                            
+        49,721,582      cache-misses              #   12.130 % of all cache refs    
+   434,017,355,499      cycles                                                      
+   507,854,741,722      instructions              #    1.17  insns per cycle        
+
+      12.775762907 seconds time elapsed
+
+# started on Mon Sep 17 18:40:38 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 18':
+
+       382,490,878      cache-references                                            
+        43,134,362      cache-misses              #   11.277 % of all cache refs    
+   450,348,122,939      cycles                                                      
+   507,879,094,012      instructions              #    1.13  insns per cycle        
+
+      12.243271496 seconds time elapsed
+
+# started on Mon Sep 17 18:41:03 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 19':
+
+       337,496,129      cache-references                                            
+        37,091,332      cache-misses              #   10.990 % of all cache refs    
+   479,058,619,114      cycles                                                      
+   507,873,367,166      instructions              #    1.06  insns per cycle        
+
+      12.095311720 seconds time elapsed
+
+# started on Mon Sep 17 18:41:27 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 20':
+
+       281,587,917      cache-references                                            
+        20,030,195      cache-misses              #    7.113 % of all cache refs    
+   518,850,720,612      cycles                                                      
+   507,904,730,739      instructions              #    0.98  insns per cycle        
+
+      12.057551012 seconds time elapsed
+
+# started on Mon Sep 17 18:41:51 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 21':
+
+       348,179,419      cache-references                                            
+        38,780,685      cache-misses              #   11.138 % of all cache refs    
+   484,289,541,382      cycles                                                      
+   507,776,860,062      instructions              #    1.05  insns per cycle        
+
+      11.915065382 seconds time elapsed
+
+# started on Mon Sep 17 18:42:15 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 22':
+
+       430,470,269      cache-references                                            
+        52,258,720      cache-misses              #   12.140 % of all cache refs    
+   472,455,871,582      cycles                                                      
+   507,774,455,736      instructions              #    1.07  insns per cycle        
+
+      11.313358141 seconds time elapsed
+
+# started on Mon Sep 17 18:42:38 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 23':
+
+       458,433,886      cache-references                                            
+        57,236,986      cache-misses              #   12.485 % of all cache refs    
+   473,815,078,505      cycles                                                      
+   507,781,554,093      instructions              #    1.07  insns per cycle        
+
+      11.418134985 seconds time elapsed
+
+# started on Mon Sep 17 18:43:01 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 24':
+
+       461,733,535      cache-references                                            
+        59,842,589      cache-misses              #   12.960 % of all cache refs    
+   470,721,310,580      cycles                                                      
+   507,782,396,364      instructions              #    1.08  insns per cycle        
+
+      11.612808245 seconds time elapsed
+
+# started on Mon Sep 17 18:43:24 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 25':
+
+       457,009,290      cache-references                                            
+        60,595,864      cache-misses              #   13.259 % of all cache refs    
+   472,227,824,846      cycles                                                      
+   507,783,435,829      instructions              #    1.08  insns per cycle        
+
+      11.412943747 seconds time elapsed
+
+# started on Mon Sep 17 18:43:47 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 26':
+
+       478,263,612      cache-references                                            
+        69,443,454      cache-misses              #   14.520 % of all cache refs    
+   470,160,119,385      cycles                                                      
+   507,779,456,422      instructions              #    1.08  insns per cycle        
+
+      11.621332574 seconds time elapsed
+
+# started on Mon Sep 17 18:44:10 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 27':
+
+       510,513,257      cache-references                                            
+        71,529,293      cache-misses              #   14.011 % of all cache refs    
+   471,397,440,067      cycles                                                      
+   507,782,133,658      instructions              #    1.08  insns per cycle        
+
+      11.670319343 seconds time elapsed
+
+# started on Mon Sep 17 18:44:34 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 28':
+
+       509,507,419      cache-references                                            
+        73,562,967      cache-misses              #   14.438 % of all cache refs    
+   470,273,591,204      cycles                                                      
+   507,782,046,223      instructions              #    1.08  insns per cycle        
+
+      11.766354508 seconds time elapsed
+
+# started on Mon Sep 17 18:44:57 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 29':
+
+       521,888,405      cache-references                                            
+        71,541,164      cache-misses              #   13.708 % of all cache refs    
+   470,479,805,995      cycles                                                      
+   507,783,521,649      instructions              #    1.08  insns per cycle        
+
+      11.690076832 seconds time elapsed
+
+# started on Mon Sep 17 18:45:20 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 30':
+
+       532,566,611      cache-references                                            
+        77,173,764      cache-misses              #   14.491 % of all cache refs    
+   469,669,185,142      cycles                                                      
+   507,785,503,192      instructions              #    1.08  insns per cycle        
+
+      11.493658150 seconds time elapsed
+
+# started on Mon Sep 17 18:45:43 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 31':
+
+       516,212,297      cache-references                                            
+        75,491,995      cache-misses              #   14.624 % of all cache refs    
+   470,337,345,190      cycles                                                      
+   507,786,418,742      instructions              #    1.08  insns per cycle        
+
+      11.329031177 seconds time elapsed
+
+# started on Mon Sep 17 18:46:06 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 32':
+
+       537,232,743      cache-references                                            
+        77,142,295      cache-misses              #   14.359 % of all cache refs    
+   470,496,932,992      cycles                                                      
+   507,787,791,437      instructions              #    1.08  insns per cycle        
+
+      11.657635917 seconds time elapsed
+
+# started on Mon Sep 17 18:46:29 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 33':
+
+       532,502,962      cache-references                                            
+        75,391,604      cache-misses              #   14.158 % of all cache refs    
+   468,666,893,243      cycles                                                      
+   507,788,718,806      instructions              #    1.08  insns per cycle        
+
+      11.291033525 seconds time elapsed
+
+# started on Mon Sep 17 18:46:51 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 34':
+
+       547,773,934      cache-references                                            
+        80,572,007      cache-misses              #   14.709 % of all cache refs    
+   471,283,788,553      cycles                                                      
+   507,792,150,463      instructions              #    1.08  insns per cycle        
+
+      11.169983910 seconds time elapsed
+
+# started on Mon Sep 17 18:47:14 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 35':
+
+       555,572,945      cache-references                                            
+        78,471,035      cache-misses              #   14.124 % of all cache refs    
+   468,130,890,730      cycles                                                      
+   507,792,614,636      instructions              #    1.08  insns per cycle        
+
+      11.022658113 seconds time elapsed
+
+# started on Mon Sep 17 18:47:36 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 36':
+
+       542,900,895      cache-references                                            
+        77,452,355      cache-misses              #   14.266 % of all cache refs    
+   469,388,281,186      cycles                                                      
+   507,792,420,451      instructions              #    1.08  insns per cycle        
+
+      11.274091095 seconds time elapsed
+
+# started on Mon Sep 17 18:47:58 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 37':
+
+       536,646,477      cache-references                                            
+        69,543,960      cache-misses              #   12.959 % of all cache refs    
+   466,194,558,684      cycles                                                      
+   507,793,971,645      instructions              #    1.09  insns per cycle        
+
+      11.110063328 seconds time elapsed
+
+# started on Mon Sep 17 18:48:20 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 38':
+
+       535,241,391      cache-references                                            
+        66,034,910      cache-misses              #   12.337 % of all cache refs    
+   465,198,029,731      cycles                                                      
+   507,794,292,991      instructions              #    1.09  insns per cycle        
+
+      11.133958375 seconds time elapsed
+
+# started on Mon Sep 17 18:48:43 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 39':
+
+       537,000,944      cache-references                                            
+        57,542,283      cache-misses              #   10.715 % of all cache refs    
+   461,943,068,682      cycles                                                      
+   507,793,974,697      instructions              #    1.10  insns per cycle        
+
+      10.968192329 seconds time elapsed
+
+# started on Mon Sep 17 18:49:05 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 40':
+
+       528,539,005      cache-references                                            
+        70,808,581      cache-misses              #   13.397 % of all cache refs    
+   466,635,669,145      cycles                                                      
+   507,795,335,034      instructions              #    1.09  insns per cycle        
+
+      11.123510073 seconds time elapsed
+
+# started on Mon Sep 17 18:49:27 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 41':
+
+       550,379,263      cache-references                                            
+        76,611,200      cache-misses              #   13.920 % of all cache refs    
+   468,357,700,171      cycles                                                      
+   507,798,253,182      instructions              #    1.08  insns per cycle        
+
+      11.078760579 seconds time elapsed
+
+# started on Mon Sep 17 18:49:50 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 42':
+
+       558,802,947      cache-references                                            
+        78,462,793      cache-misses              #   14.041 % of all cache refs    
+   466,918,312,594      cycles                                                      
+   507,799,527,344      instructions              #    1.09  insns per cycle        
+
+      11.122696826 seconds time elapsed
+
+# started on Mon Sep 17 18:50:12 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 43':
+
+       560,500,351      cache-references                                            
+        81,489,932      cache-misses              #   14.539 % of all cache refs    
+   468,542,801,522      cycles                                                      
+   507,799,406,673      instructions              #    1.08  insns per cycle        
+
+      11.219053121 seconds time elapsed
+
+# started on Mon Sep 17 18:50:34 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 44':
+
+       563,684,991      cache-references                                            
+        80,562,520      cache-misses              #   14.292 % of all cache refs    
+   469,187,587,519      cycles                                                      
+   507,801,615,309      instructions              #    1.08  insns per cycle        
+
+      11.099802688 seconds time elapsed
+
+# started on Mon Sep 17 18:50:56 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 45':
+
+       558,052,149      cache-references                                            
+        85,180,045      cache-misses              #   15.264 % of all cache refs    
+   470,071,814,272      cycles                                                      
+   507,801,788,768      instructions              #    1.08  insns per cycle        
+
+      11.145029999 seconds time elapsed
+
+# started on Mon Sep 17 18:51:19 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 46':
+
+       572,028,947      cache-references                                            
+        86,257,873      cache-misses              #   15.079 % of all cache refs    
+   470,930,504,412      cycles                                                      
+   507,803,550,425      instructions              #    1.08  insns per cycle        
+
+      11.159090608 seconds time elapsed
+
+# started on Mon Sep 17 18:51:41 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 47':
+
+       567,810,328      cache-references                                            
+        83,042,127      cache-misses              #   14.625 % of all cache refs    
+   469,331,024,256      cycles                                                      
+   507,803,142,203      instructions              #    1.08  insns per cycle        
+
+      11.197544175 seconds time elapsed
+
+# started on Mon Sep 17 18:52:03 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 48':
+
+       557,273,961      cache-references                                            
+        79,817,326      cache-misses              #   14.323 % of all cache refs    
+   468,962,364,581      cycles                                                      
+   507,803,944,549      instructions              #    1.08  insns per cycle        
+
+      10.997617348 seconds time elapsed
+
+# started on Mon Sep 17 18:52:25 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 49':
+
+       570,171,104      cache-references                                            
+        83,118,810      cache-misses              #   14.578 % of all cache refs    
+   468,442,453,916      cycles                                                      
+   507,805,913,459      instructions              #    1.08  insns per cycle        
+
+      11.071435060 seconds time elapsed
+
+# started on Mon Sep 17 18:52:48 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 50':
+
+       570,815,940      cache-references                                            
+        68,070,920      cache-misses              #   11.925 % of all cache refs    
+   466,831,084,995      cycles                                                      
+   507,806,932,312      instructions              #    1.09  insns per cycle        
+
+      11.037852009 seconds time elapsed
+
+# started on Mon Sep 17 18:53:10 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 51':
+
+       577,041,728      cache-references                                            
+        83,511,184      cache-misses              #   14.472 % of all cache refs    
+   468,199,134,718      cycles                                                      
+   507,811,448,068      instructions              #    1.08  insns per cycle        
+
+      11.043821298 seconds time elapsed
+
+# started on Mon Sep 17 18:53:32 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 52':
+
+       572,588,439      cache-references                                            
+        82,234,184      cache-misses              #   14.362 % of all cache refs    
+   467,784,813,116      cycles                                                      
+   507,812,157,305      instructions              #    1.09  insns per cycle        
+
+      10.958906593 seconds time elapsed
+
+# started on Mon Sep 17 18:53:54 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 53':
+
+       569,838,834      cache-references                                            
+        83,453,833      cache-misses              #   14.645 % of all cache refs    
+   469,282,234,165      cycles                                                      
+   507,813,582,970      instructions              #    1.08  insns per cycle        
+
+      10.950415206 seconds time elapsed
+
+# started on Mon Sep 17 18:54:16 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 54':
+
+       557,222,367      cache-references                                            
+        76,111,669      cache-misses              #   13.659 % of all cache refs    
+   467,083,164,335      cycles                                                      
+   507,806,147,619      instructions              #    1.09  insns per cycle        
+
+      11.085792658 seconds time elapsed
+
+# started on Mon Sep 17 18:54:38 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 55':
+
+       577,776,823      cache-references                                            
+        83,400,493      cache-misses              #   14.435 % of all cache refs    
+   471,201,394,895      cycles                                                      
+   507,811,910,511      instructions              #    1.08  insns per cycle        
+
+      10.990569052 seconds time elapsed
+
+# started on Mon Sep 17 18:55:00 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 56':
+
+       571,524,801      cache-references                                            
+        83,060,402      cache-misses              #   14.533 % of all cache refs    
+   468,964,883,072      cycles                                                      
+   507,810,176,197      instructions              #    1.08  insns per cycle        
+
+      11.018313579 seconds time elapsed
+
+# started on Mon Sep 17 18:55:22 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 57':
+
+       576,020,640      cache-references                                            
+        79,369,592      cache-misses              #   13.779 % of all cache refs    
+   468,788,617,949      cycles                                                      
+   507,811,519,544      instructions              #    1.08  insns per cycle        
+
+      10.991192397 seconds time elapsed
+
+# started on Mon Sep 17 18:55:44 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 58':
+
+       540,334,049      cache-references                                            
+        74,083,757      cache-misses              #   13.711 % of all cache refs    
+   469,716,878,460      cycles                                                      
+   507,811,555,719      instructions              #    1.08  insns per cycle        
+
+      10.984486088 seconds time elapsed
+
+# started on Mon Sep 17 18:56:06 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 59':
+
+       550,734,250      cache-references                                            
+        71,538,428      cache-misses              #   12.990 % of all cache refs    
+   466,799,948,126      cycles                                                      
+   507,809,693,582      instructions              #    1.09  insns per cycle        
+
+      10.932050241 seconds time elapsed
+
+# started on Mon Sep 17 18:56:28 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 60':
+
+       556,233,355      cache-references                                            
+        68,257,524      cache-misses              #   12.271 % of all cache refs    
+   466,656,455,303      cycles                                                      
+   507,812,059,065      instructions              #    1.09  insns per cycle        
+
+      10.899065394 seconds time elapsed
+
+# started on Mon Sep 17 18:56:50 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 61':
+
+       568,611,506      cache-references                                            
+        70,891,965      cache-misses              #   12.468 % of all cache refs    
+   465,402,662,200      cycles                                                      
+   507,812,589,934      instructions              #    1.09  insns per cycle        
+
+      10.925963094 seconds time elapsed
+
+# started on Mon Sep 17 18:57:12 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 62':
+
+       578,903,957      cache-references                                            
+        85,081,109      cache-misses              #   14.697 % of all cache refs    
+   468,477,759,184      cycles                                                      
+   507,814,273,748      instructions              #    1.08  insns per cycle        
+
+      10.975643595 seconds time elapsed
+
+# started on Mon Sep 17 18:57:34 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 63':
+
+       562,999,646      cache-references                                            
+        77,291,139      cache-misses              #   13.728 % of all cache refs    
+   468,239,087,385      cycles                                                      
+   507,815,619,372      instructions              #    1.08  insns per cycle        
+
+      11.020065884 seconds time elapsed
+
+# started on Mon Sep 17 18:57:56 2018
+
+
+ Performance counter stats for './mm-omp-ori 2048 64':
+
+       577,549,958      cache-references                                            
+        82,835,072      cache-misses              #   14.342 % of all cache refs    
+   470,343,255,317      cycles                                                      
+   507,817,044,122      instructions              #    1.08  insns per cycle        
+
+      11.097388657 seconds time elapsed
+
