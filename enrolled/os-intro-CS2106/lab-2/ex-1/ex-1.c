@@ -22,7 +22,7 @@ int main() {
         cur = pid[i] = fork();
         if (cur == 0) {
             sleep(1);
-            printf("Child %d[%d]: Hello.\n", i + 1, getpid());
+            printf("Child %d[%d]: Hello!\n", i + 1, getpid());
             break;
         }
     }
