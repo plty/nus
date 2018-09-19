@@ -3,13 +3,13 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 
-public class Main {
-    public static LinkedList<Integer> heapJoin(ArrayList<LinkedList<Integer>> lists) {
+public class KMergeHeap {
+    public static LinkedList<Integer> join(ArrayList<LinkedList<Integer>> lists) {
         // Creating PriorityQueue of LinkedList
         // The concensus is LinkedList a < LinkedList b is done by 
         //      comparing the first element of LinkedList
         // In Java comparator function is done by returning an integer, 
-        //      given a, b return <0 if a < b, return >0 if a > b, return 0 iff a == b, 
+        //      given a, b return < 0 if a < b, return > 0 if a > b, return 0 iff a == b, 
         // That comparator is this lambda, (a, b) -> a.getFirst() - b.getFirst()
         // This is a lifehack, a quick and easy way to create a function / comparator.
         PriorityQueue<LinkedList<Integer>> pq = 
@@ -37,45 +37,6 @@ public class Main {
         return result;
     }
 
-    /**
-     * merge an array full of sorted LinkedList into a new sorted LinkedList
-     * @param lists the ArrayList of LinkedList
-     */
-    public static LinkedList<Integer> dncJoin(ArrayList<LinkedList<Integer>> lists) {
-        return dncJoin(lists, 0, lists.size());
-    }
-
-    /**
-     * merge an array of sorted LinkedList from index l to r into a new sorted LinkedList.
-     * @param lists the ArrayList of LinkedList
-     * @param l left-most index (inclusive)
-     * @param r right-most index (exclusive)
-     */
-    public static LinkedList<Integer> dncJoin(ArrayList<LinkedList<Integer>> lists, int l, int r) {
-        if (r == l) return new LinkedList<>();
-        if (r - l == 1) 
-            return lists.get(l);
-
-        int piv = (l + r) / 2;
-        return merge(dncJoin(lists, l, piv), dncJoin(lists, piv, r));
-    }
-
-    /** Merge two sorted LinkedList into a new sorted LinkedList. */
-    public static LinkedList<Integer> merge(LinkedList<Integer> left, LinkedList<Integer> right){
-        // this is the same as the merging part of mergesort
-        int size = left.size() + right.size();
-        LinkedList<Integer> result = new LinkedList<>();
-        left.add(1 << 30); right.add(1 << 30);
-        for (int i = 0; i < size; i++) {
-            if (left.getFirst() < right.getFirst()) {
-                result.add(left.remove());
-            } else {
-                result.add(right.remove());
-            }
-        }
-        return result;
-    }
-
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int type = in.nextInt(), k = in.nextInt();
@@ -88,10 +49,6 @@ public class Main {
             }
         }
         in.close();
-
-        if (type == 0)
-            System.out.println(dncJoin(lists));
-        if (type == 1)
-            System.out.println(heapJoin(lists));
+        System.out.println(join(lists));
     }
 }

@@ -27,7 +27,7 @@ public class MedianQueue {
         if (right.size() > left.size())
             left.add(right.remove());
 
-        // assure middle value is "median"
+        // assure middle value is the "median"
         if (left.peek() > right.peek()) {
             left.add(right.remove());
             right.add(left.remove());
