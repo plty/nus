@@ -39,7 +39,7 @@ public class KMergeHeap {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int type = in.nextInt(), k = in.nextInt();
+        int k = in.nextInt();
         ArrayList<LinkedList<Integer>> lists = new ArrayList<>();
         for (int i = 0; i < k; i++) {
             lists.add(new LinkedList<>());
