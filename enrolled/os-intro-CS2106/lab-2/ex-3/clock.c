@@ -15,8 +15,7 @@ Example:
     a.out 5     //report every 1 second for 5 times
 ***********************/
 
-int main(int argc, char** argv)
-{
+int main(int argc, char** argv) {
     int reportTime = 1;  //default: Report every 1 second
     int repeatNum = 5;  //default: Report for 5 times
     int userInput, i;

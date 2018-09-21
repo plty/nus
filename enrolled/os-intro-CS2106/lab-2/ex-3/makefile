@@ -1,4 +1,4 @@
-all:	infinite alarmClock clock showCmdArg stringTokenizer return
+all:	infinite alarmClock clock showCmdArg stringTokenizer return ex3
 
 infinite: infinite.c
 	gcc -Wall -o infinite infinite.c
@@ -18,6 +18,8 @@ stringTokenizer:	stringTokenizer.c
 return:	return.c
 	gcc -Wall -o return return.c
 
+ex3: ex3.c
+	gcc -Wall -o ex3 ex3.c
 clean:
-	rm -f infinite alarmClock clock showCmdArg stringTokenizer return
+	rm -f infinite alarmClock clock showCmdArg stringTokenizer return ex3
 
