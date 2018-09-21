@@ -1,5 +1,8 @@
+# Ignore all without extensions
 *
 !*.*
 !*/
 
 *.class
+a.out
+

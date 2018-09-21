@@ -4,8 +4,8 @@
  * Student No: A0181002B
  * Lab Group:  08
  *************************************
-Warning: Make sure your code works on
-lab machine (Linux on x86)
+ * Warning: Make sure your code works on
+ * lab machine (Linux on x86)
  *************************************/
 
 #include <stdio.h>
@@ -22,14 +22,14 @@ int main() {
         cur = pid[i] = fork();
         if (cur == 0) {
             sleep(1);
-            printf("Child %d[%d]: Hello.\n", i + 1, getpid());
+            printf("Child %d[%d]: Hello!\n", i + 1, getpid());
             break;
         }
     }
 
     if (cur != 0)
         for (int i = 0; i < nChild; i++) {
-            waitpid(pid[i], NULL, NULL);
+            waitpid(pid[i], NULL, 0);
             printf("Parent: Child %d[%d] done.\n", i + 1, pid[i]);
         }
     return 0;

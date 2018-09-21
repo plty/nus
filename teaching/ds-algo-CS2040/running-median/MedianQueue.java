@@ -2,10 +2,10 @@ import java.util.Scanner;
 import java.util.PriorityQueue;
 
 public class MedianQueue {
-    int size = 0;
-    PriorityQueue<Integer> left = 
+    private int size = 0;
+    private PriorityQueue<Integer> left = 
         new PriorityQueue<>((a, b) -> b - a);
-    PriorityQueue<Integer> right = 
+    private PriorityQueue<Integer> right = 
         new PriorityQueue<>((a, b) -> a - b);
 
     public MedianQueue() {
@@ -27,7 +27,7 @@ public class MedianQueue {
         if (right.size() > left.size())
             left.add(right.remove());
 
-        // assure middle value is "median"
+        // assure middle value is the "median"
         if (left.peek() > right.peek()) {
             left.add(right.remove());
             right.add(left.remove());
