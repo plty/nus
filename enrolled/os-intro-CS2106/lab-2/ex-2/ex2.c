@@ -1,39 +1,43 @@
-/*************************************
-* Lab 2 Exercise 2
-* Name:
-* Student No:
-* Lab Group:
-*************************************
-Warning: Make sure your code works on
-lab machine (Linux on x86)
-*************************************/
+/************************************
+ * Lab 2 Exercise 2
+ * Name:        Jerrell Ezralemuel
+ * Student No:  A0181002B
+ * Lab Group:   08
+ *************************************
+ * Warning: Make sure your code works on
+ * lab machine (Linux on x86)
+ *************************************/
 
+#define PATH_MAX 4096
+#include <fcntl.h>      // for stat()
+#include <stdbool.h>    // for bool
 #include <stdio.h>
-#include <string.h>     //For string comparison, string copy
-#include <fcntl.h>      //For stat()
-#include <sys/types.h>   
+#include <string.h>     // for string comparison, string copy
 #include <sys/stat.h>
-#include <unistd.h>     //for fork()
-#include <sys/wait.h>   //for wait()
+#include <sys/types.h>
+#include <sys/wait.h>   // for wait()
+#include <unistd.h>     // for fork()
 
-int main()
-{
-    char path[20];
+bool file_exist (char *path) {
+    struct stat buf;
+    return stat(path, &buf) == 0;
+}
 
-    //read user input
-    printf("YWIMC > ");
-    scanf("%s", path );
-
-    while (strcmp( path, "quit") != 0){ 
-        // Check whether file exist
-        // In real interpreter, a lot more checks are needed
-        // E.g. check for file type, execution right etc
-
-
-        printf("YWIMC > ");
-        scanf("%s", path);
+int main() {
+    char path[PATH_MAX];
+    // more readable and more uncluttered
+    while (printf("YWIMC > "), scanf("%s", path), strcmp(path, "quit")) {
+        if (!file_exist(path)) {
+            printf("%s not found\n", path);
+            continue;
+        }
+        int pid = fork();
+        if (pid == 0)
+            execl(path, path, NULL); 
+        int status;
+        wait(&status);
+        printf("\n");
     }
-    
     printf("Goodbye!\n");
     return 0;
 }

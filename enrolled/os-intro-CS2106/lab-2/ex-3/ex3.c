@@ -1,13 +1,15 @@
 /*************************************
 * Lab 2 Exercise 3
-* Name:
-* Student No:
-* Lab Group:
+* Name:         Jerrell Ezralemuel
+* Student No:   A0181002B
+* Lab Group:    08
 *************************************
-Warning: Make sure your code works on
-lab machine (Linux on x86)
+* Warning: Make sure your code works on
+* lab machine (Linux on x86)
 *************************************/
 
+#define PATH_MAX 4096
+#define PROC_MAX 4096
 #include <stdio.h>
 #include <fcntl.h>      //For stat()
 #include <sys/types.h>   
@@ -17,26 +19,40 @@ lab machine (Linux on x86)
 #include <string.h>     //for string comparison etc
 #include <stdlib.h>     //for malloc()
 
-int main()
-{
+bool file_exist (char *path) {
+    struct stat buf;
+    return stat(path, &buf) == 0;
+}
 
-    char userInput[120];
+int main() {
+    int proc[PROC_MAX];
+    char path[PATH_MAX];
+    int nProc = 0;
+    int status;
+    while (printf("YWIMC > "), scanf("%s", path), strcmp(path, "quit")) {
+        gets()
+        if (!file_exist(path)) {
+            printf("%s not found\n", path);
+            continue;
+        }
+        if (!strcmp(path, "printchild")) {
+            printf("Unwaited Child Processes:\n");
+            for (int i = 0; i < nProc; i++)
+                printf("%d\n", proc[i]);
+        }
 
-    //read user input
-    printf("YWIMC > ");
+        if (!strcmp(path, "wait")) {
+            int pid; scanf("%d", &pid);
+            waitpid(pid, &status, 0);
+        }
 
-    //hint: you probably want to find a better way to read the inputs
-    //hint 2: the alternative can be found in one of the sample programs
-  
-    scanf("%s", userInput);
-
-    while ( strcmp(userInput, "quit") != 0 ){
-
-        printf("YWIMC > ");
-        scanf("%s", userInput);
+        int pid = fork();
+        if (pid == 0)
+            execl(path, path, NULL); 
+        int status;
+        wait(&status);
+        printf("\n");
     }
-    
     printf("Goodbye!\n");
     return 0;
-
 }
