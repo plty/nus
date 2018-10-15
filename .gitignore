@@ -3,6 +3,10 @@
 !*.*
 !*/
 
+!hostfile
+!machinefile
+!rankfile
+
 *.class
 a.out
 

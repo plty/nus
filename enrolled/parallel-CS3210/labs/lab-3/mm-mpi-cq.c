@@ -227,9 +227,9 @@ void master_distribute(matrix a, matrix b) {
                 MPI_Send(b.element[row_b + k], size, MPI_FLOAT, slave_id, MATRIX_B | k, MPI_COMM_WORLD);
             }
             fprintf(stderr," +++ MASTER : Finished sending row [%d-%d] of matrix A to process %d\n", 
-                row_a, row_a + chunk_size, slave_id);
+                    row_a, row_a + chunk_size, slave_id);
             fprintf(stderr," +++ MASTER : Finished sending row [%d-%d] of matrix B to process %d\n", 
-                row_b, row_b + chunk_size, slave_id);
+                    row_b, row_b + chunk_size, slave_id);
         }
     }
 }
