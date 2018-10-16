@@ -1,0 +1,21 @@
+Compact Verifier:
+=================
+Content Check:
+	[112 == 112]
+	[114 == 114]
+	[116 == 116]
+	[118 == 118]
+Partition Check: PASSED
+
+Heap Meta Info:
+===============
+Total Size = 1024 bytes
+Start Address = 0x1c93000
+Partition Meta Size = 24 bytes
+Partition list:
+[+    0 |    40 bytes | 1]
+[+   64 |    40 bytes | 1]
+[+  128 |    40 bytes | 1]
+[+  192 |    40 bytes | 1]
+[+  256 |   744 bytes | 0]
+

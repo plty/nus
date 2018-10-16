@@ -1,0 +1,24 @@
+1 70: failed
+1 80: failed
+Heap Meta Info:
+===============
+Total Size = 1024 bytes
+Start Address = 0xa83000
+Partition Meta Size = 24 bytes
+Partition list:
+[+    0 |    40 bytes | 1]
+[+   64 |    80 bytes | 0]
+[+  168 |   120 bytes | 1]
+[+  312 |   160 bytes | 0]
+[+  496 |   200 bytes | 1]
+[+  720 |   240 bytes | 1]
+[+  984 |    16 bytes | 0]
+
+Heap Usage Statistics:
+======================
+Total Space: 1024 bytes
+Total Occupied Partitions: 4
+	Total Occupied Size: 600 bytes
+Total Number of Holes: 3
+	Total Hole Size: 256 bytes
+Total Meta Information Size: 168 bytes
