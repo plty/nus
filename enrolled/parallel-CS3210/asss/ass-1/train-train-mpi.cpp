@@ -26,6 +26,7 @@ class Train {
     int color;
     int loading_time;
     int destination;
+    int next_destination;
     int id;
   public:
     Train() {
@@ -35,6 +36,9 @@ class Train {
     Train(int color, int id) {
         this->color = color;
         this->id = id;
+        this->loading_time = 0;
+        this->destination = -1;
+        this->next_destination = -1;
     };
 
     ~Train() = default;
@@ -59,6 +63,14 @@ class Train {
         return this->color != UNDEFINED;
     }
 
+    int get_next_destination() {
+        return this->next_destination;
+    }
+
+    void set_next_destination(int x) {
+        this->next_destination = x;
+    }
+
     int get_destination() {
         return this->destination;
     }
@@ -68,7 +80,7 @@ class Train {
     }
 };
 
-Train invalidTrain;
+Train invalidTrain = Train();
 
 class Station {
   private:
@@ -82,13 +94,14 @@ class Station {
     Station(string name, double popularity) {
         this->name = name;
         this->popularity = popularity;
+        this->departure_time = 0;
     }
 
     ~Station() = default;
 
     Train simulate() {
         Train retval;
-        if (loading_train.valid() && tick == departure_time) {
+        if (loading_train.valid() && tick >= departure_time) {
             retval = loading_train;
             loading_train = invalidTrain;
         }
@@ -140,6 +153,7 @@ class Link {
         this->current_station = current_station;
         this->next_station = next_station;
         this->distance = distance;
+        this->arrival_time = 0;
     }
 
     ~Link() = default;
@@ -165,7 +179,7 @@ class Link {
 
     Train simulate() {
         Train retval;
-        if (moving_train.valid() && tick == arrival_time) {
+        if (moving_train.valid() && tick >= arrival_time) {
             retval = moving_train;
             moving_train = invalidTrain;
         }
@@ -181,13 +195,19 @@ class Link {
     void handle() {
         // stationnya di simulate
         Train train = this->current_station->simulate();
-        if (train.valid()) {
+        if (train.valid() && train.get_next_destination() == this->next_station->get_id()) {
             q.push_back(train);
         }
 
         // gua nya disimulate
         Train arrived_train = this->simulate();
-        train.set_destination(this->next[train.get_color()]->current_station->get_id());
+        if (arrived_train.valid()) {
+            assert(arrived_train.get_color() >= 0);
+            assert(arrived_train.get_color() < 3);
+            assert(this->next[arrived_train.get_color()] != NULL);
+            arrived_train.set_destination(this->next[arrived_train.get_color()]->current_station->get_id());
+            arrived_train.set_next_destination(this->next[arrived_train.get_color()]->next_station->get_id());
+        }
 
         // pilih yang duluan
         Station *first = current_station->get_id() < next_station->get_id() ? current_station : next_station;
@@ -260,7 +280,7 @@ void load_data() {
     // Train count
     int train_count[MAX_LINES];
     for (int i = 0; i < num_line; i++) {
-        scanf("%d", &train_count[i]);
+        scanf("%d%c", &train_count[i], &tmp);
     }
 
     // Station
@@ -290,12 +310,13 @@ void load_data() {
         Station *home_station = stations[routes[i][0]];
         for (int j = 0; j < train_count[i]; j++) {
             home_station->q.push_back(Train(i, j));
+            home_station->q.back().set_next_destination(routes[i][1]);
         }
     }
 }
 
 int main(int argc, char **argv) {
-    freopen("small.in", "r", stdin);
+    freopen(argv[1], "r", stdin);
     MPI_Init(&argc, &argv);
     int rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
