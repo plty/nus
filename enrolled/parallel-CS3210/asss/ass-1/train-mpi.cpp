@@ -9,6 +9,27 @@ using namespace std;
 #define MAX_LINES 3
 #define MAX_DURATION 1000
 
+class Link;
+
+class Train {
+  private:
+    int color;
+    int line_id;
+    int loading_time;
+  public:
+    Train();
+    Train(Train &o);
+    void next();
+    Link *link();
+    int get_color();
+    int get_line_id();
+    int get_loading_time();
+    void set_loading_time(int o);
+};
+
+class Line;
+class Station;
+
 #define fi first
 #define se second
 const int inf = 1e9;
@@ -20,49 +41,9 @@ int num_stn, num_line = 3, duration;
 
 int tick;
 
-class Train {
-  private:
-    int color;
-    int line_id;
-    int loading_time;
-  public:
-    Train() {
-        color = UNDEFINED;
-    }
-
-    Train(Train &o) {
-        this.color = o.get_color();
-        this.link_id = o.get_link_id();
-    }
-
-    void next() {
-        line_id = line[color][line_id]->get_next()->get_id();
-    }
-
-    Link *link() {
-        return line[color][line_id]->get_link();
-    }
-
-    int get_color() {
-        return color;
-    }
-
-    int get_link_id() {
-        return link_id;
-    }
-
-    int get_loading_time() {
-        return loading_time;
-    }
-
-    void set_loading_time(int o) {
-        this->loading_time = o;
-    }
-};
 // Basically station is maintained by every link independently
 class Station {
   private:
-    MPI_Comm comm;
     string name;
     double popularity;
     queue<Train> q;
@@ -70,7 +51,7 @@ class Station {
     int releaseTime;
   public:
     MPI_Comm comm;
-    Station(String n, double p) {
+    Station(string n, double p) {
         name  = n;
         popularity = p;
     }
@@ -81,8 +62,8 @@ class Station {
 
     void simulate(Link *link) {
         if (loadingTrain && tick == releaseTime) {
-            if (train.link == link) {
-                link.push(loadingTrain);
+            if (loadingTrain->link() == link) {
+                link->push(loadingTrain);
             }
 
             loadingTrain = NULL;
@@ -136,10 +117,11 @@ class Line {
         return id;
     }
 
-    Line* get_next() {
+    Line *get_next() {
         return this->next;
     }
 }
+
 class Link {
   private:
     Station &cur_station;
@@ -171,13 +153,17 @@ class Link {
         return retval;
     }
 
+    void push(Train train) {
+        this->q.push(new Train(train));
+    }
+
     handle() {
         // Simulate train boarding
         cur_station.simulate(this);
 
         // Simulate train leaving
         Station &first = cur_station.id < next_station.id ? cur_station : next_station;
-        Station &irwanto = cur_station.id < next_station.id ? next_station : cur_station;
+        Station &second = cur_station.id < next_station.id ? next_station : cur_station;
 
         // mpi send result to all on the next station
         Train *departing_train = this->simulate();
@@ -192,18 +178,48 @@ class Link {
             first.update_queue(trains);
         }
 
-        // allgather irwanto group
-        MPI_Allgather(cur_station == irwanto ? Train() : departing_train, sizeof(Train), MPI_BYTE, &trains, sizeof(Train), MPI_BYTE, irwanto);
-        if (cur_station == irwanto) {
-            irwanto.update_queue(trains);
+        // allgather second group
+        MPI_Allgather(cur_station == second ? Train() : departing_train, sizeof(Train), MPI_BYTE, &trains, sizeof(Train), MPI_BYTE, second);
+        if (cur_station == second) {
+            second.update_queue(trains);
         }
     }
 };
 
-Station stations[MAX_N];
-Link links[MAX_N][MAX_N];
-vector<Train> trains;
 vector<Line> lines[MAX_LINES];
+
+Train::Train() {
+    color = UNDEFINED;
+}
+
+Train::Train(Train &o) {
+    this->color = o.get_color();
+    this->line_id = o.get_line_id();
+}
+
+void Train::next() {
+    line_id = lines[color][line_id]->get_next()->get_id();
+}
+
+Link *Train::link() {
+    return lines[color][line_id]->get_link();
+}
+
+int Train::get_color()  {
+    return color;
+}
+
+int Train::get_line_id() {
+    return line_id;
+}
+
+int Train::get_loading_time() {
+    return loading_time;
+}
+
+int Train::set_loading_time(int o) {
+    this->loading_time = o;
+}
 
 void load_data() {
     // Number of stations
@@ -286,6 +302,10 @@ void load_data() {
 int id_of(int x, int y) {
     return x * num_stn + y;
 }
+
+Station stations[MAX_N];
+Link links[MAX_N][MAX_N];
+vector<Train> trains;
 
 int main() {
     load_data();
