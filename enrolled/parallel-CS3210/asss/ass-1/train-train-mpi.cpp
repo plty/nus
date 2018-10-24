@@ -1,7 +1,6 @@
 #include<bits/stdc++.h>
 #include<mpi.h>
 using namespace std;
-
 #define UNDEFINED -1
 #define MAX_N 200
 #define MAX_STATION 200
@@ -100,7 +99,7 @@ class Station {
 
     void update_queue(Train trains[]) {
         // this might be wrong
-        for (int i = 0; i < 2 * num_stn; i++) {
+        for (int i = 0; i < 2 * num_stn - 2; i++) {
             Train t = trains[i];
             if (t.valid() && t.get_destination() == this->get_id()) {
                 q.push(t);
@@ -159,7 +158,8 @@ class Link {
 
         // pilih yang duluan
         Station *first = current_station->get_id() < next_station->get_id() ? current_station : next_station;
-        Station *second = current_station->get_id() < next_station->get_id() ? next_station : current_station; Train trains[2 * num_stn];
+        Station *second = current_station->get_id() < next_station->get_id() ? next_station : current_station; 
+	Train trains[2 * num_stn];
 
         MPI_Allgather(current_station == first ? &invalidTrain : &arrived_train, sizeof(Train), MPI_BYTE, &trains, sizeof(Train), MPI_BYTE, first->comm);
         if (current_station == first) {
@@ -175,8 +175,7 @@ class Link {
 };
 
 int id_of(int x, int y) {
-    // return x * num_stn + y;
-    return 0;
+    return x * num_stn + y;
 }
 
 void load_data() {
@@ -254,31 +253,41 @@ void load_data() {
 }
 
 int main(int argc, char **argv) {
+freopen("test.in", "r", stdin);
     MPI_Init(&argc, &argv);
+    int rank;
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+
+    printf("Process %d Ready\n", rank);
+    fflush(stdout);
+    MPI_Barrier(MPI_COMM_WORLD);
+
     load_data();
     srand(time(NULL));
+    printf("Process %d Ready\n", rank);
+    fflush(stdout);
+    MPI_Barrier(MPI_COMM_WORLD);
     for (int i = 0; i < num_stn; i++) {
         int arr[2 * num_stn];
         int ctr = 0;
-        for (int j = 0; j < num_stn; j++) {
+        for (int j = 0; j < num_stn; j++) if (i != j) {
             arr[ctr++] = id_of(i, j);
         }
 
-        for (int j = 0; j < num_stn; j++) {
+        for (int j = 0; j < num_stn; j++) if (i != j) {
             arr[ctr++] = id_of(j, i);
         }
         MPI_Group world_group;
         MPI_Comm_group(MPI_COMM_WORLD, &world_group);
         MPI_Group new_group;
-        MPI_Group_incl(world_group, 2 * num_stn, arr, &new_group);
+        MPI_Group_incl(world_group, ctr, arr, &new_group);
         MPI_Comm_create(MPI_COMM_WORLD, new_group, &stations[i]->comm);
     }
 
-    int rank;
-    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     printf("Process %d Ready\n", rank);
     fflush(stdout);
-
+    MPI_Barrier(MPI_COMM_WORLD);
+    
     // Simulation per tick
     for(tick = 0; tick < duration; tick ++) {
         links[rank / num_stn][rank % num_stn]->handle();
@@ -288,6 +297,6 @@ int main(int argc, char **argv) {
             fflush(stdout);
         }
 
-        MPI_Barrier(MPI_COMM_WORLD);
+    return 0;
     }
 }
