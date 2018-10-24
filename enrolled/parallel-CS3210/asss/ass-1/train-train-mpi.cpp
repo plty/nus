@@ -80,7 +80,7 @@ class Train {
     }
 };
 
-Train invalidTrain = Train();
+Train invalid_train = Train();
 
 class Station {
   private:
@@ -103,7 +103,7 @@ class Station {
         Train retval;
         if (loading_train.valid() && tick >= departure_time) {
             retval = loading_train;
-            loading_train = invalidTrain;
+            loading_train = invalid_train;
         }
 
         if (!loading_train.valid() && !q.empty()) {
@@ -130,8 +130,8 @@ class Station {
 
     void print() {
         for (Train t : q) if (tick >= t.get_id()) {
-            printf(" %c%d-s%d,", color[t.get_color()], t.get_id(), this->get_id());
-        }
+                printf(" %c%d-s%d,", color[t.get_color()], t.get_id(), this->get_id());
+            }
 
         if (loading_train.valid()) {
             printf(" %c%d-s%d,", color[loading_train.get_color()], loading_train.get_id(), this->get_id());
@@ -181,7 +181,7 @@ class Link {
         Train retval;
         if (moving_train.valid() && tick >= arrival_time) {
             retval = moving_train;
-            moving_train = invalidTrain;
+            moving_train = invalid_train;
         }
 
         if (!moving_train.valid() && !q.empty()) {
@@ -214,13 +214,13 @@ class Link {
         Station *second = current_station->get_id() < next_station->get_id() ? next_station : current_station;
         Train trains[2 * num_stn];
 
-        MPI_Allgather(current_station == first ? &invalidTrain : &arrived_train, sizeof(Train), MPI_BYTE, &trains, sizeof(Train), MPI_BYTE, first->comm);
+        MPI_Allgather(current_station == first ? &invalid_train : &arrived_train, sizeof(Train), MPI_BYTE, &trains, sizeof(Train), MPI_BYTE, first->comm);
         if (current_station == first) {
             first->update_queue(trains);
         }
 
         // allgather second group
-        MPI_Allgather(current_station == second ? &invalidTrain : &arrived_train, sizeof(Train), MPI_BYTE, &trains, sizeof(Train), MPI_BYTE, second->comm);
+        MPI_Allgather(current_station == second ? &invalid_train : &arrived_train, sizeof(Train), MPI_BYTE, &trains, sizeof(Train), MPI_BYTE, second->comm);
         if (current_station == second) {
             second->update_queue(trains);
         }
