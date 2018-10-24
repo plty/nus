@@ -70,7 +70,6 @@ class Station {
     queue<Train> q;
     Train loading_train;
     int departure_time;
-    int id;
   public:
     MPI_Comm comm;
     Station(string name, double popularity) {
@@ -103,7 +102,7 @@ class Station {
         // this might be wrong
         for (int i = 0; i < 2 * num_stn; i++) {
             Train t = trains[i];
-            if (t.valid() && t.get_destination() == id) {
+            if (t.valid() && t.get_destination() == this->get_id()) {
                 q.push(t);
             }
         }
@@ -160,9 +159,7 @@ class Link {
 
         // pilih yang duluan
         Station *first = current_station->get_id() < next_station->get_id() ? current_station : next_station;
-        Station *second = current_station->get_id() < next_station->get_id() ? next_station : current_station;
-
-        Train trains[2 * num_stn];
+        Station *second = current_station->get_id() < next_station->get_id() ? next_station : current_station; Train trains[2 * num_stn];
 
         MPI_Allgather(current_station == first ? &invalidTrain : &arrived_train, sizeof(Train), MPI_BYTE, &trains, sizeof(Train), MPI_BYTE, first->comm);
         if (current_station == first) {
@@ -256,7 +253,8 @@ void load_data() {
     }
 }
 
-int main() {
+int main(int argc, char **argv) {
+    MPI_Init(&argc, &argv);
     load_data();
     srand(time(NULL));
     for (int i = 0; i < num_stn; i++) {
@@ -278,11 +276,18 @@ int main() {
 
     int rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    printf("Process %d Ready\n", rank);
+    fflush(stdout);
 
     // Simulation per tick
     for(tick = 0; tick < duration; tick ++) {
         links[rank / num_stn][rank % num_stn]->handle();
-        // mpi receive new train arriving at cur
+        // MPI receive new train arriving at cur
+        if (rank == 0) {
+            printf("%d:", tick);
+            fflush(stdout);
+        }
+
         MPI_Barrier(MPI_COMM_WORLD);
     }
 }
