@@ -19,19 +19,22 @@ int num_stn, num_line = 3;
 int duration, tick;
 map<string, int> stn_id;
 map<int, string> stn_name;
+char color[] = {'g', 'y', 'b'};
 
 class Train {
   private:
     int color;
     int loading_time;
     int destination;
+    int id;
   public:
     Train() {
         color = UNDEFINED;
     }
 
-    Train(int color) {
+    Train(int color, int id) {
         this->color = color;
+        this->id = id;
     };
 
     ~Train() = default;
@@ -39,6 +42,11 @@ class Train {
     int get_color() {
         return this->color;
     }
+
+    int get_id() {
+        return this->id;
+    }
+
     int get_loading_time() {
         return this->loading_time;
     }
@@ -66,11 +74,11 @@ class Station {
   private:
     string name;
     double popularity;
-    queue<Train> q;
     Train loading_train;
     int departure_time;
   public:
     MPI_Comm comm;
+    deque<Train> q;
     Station(string name, double popularity) {
         this->name = name;
         this->popularity = popularity;
@@ -82,12 +90,12 @@ class Station {
         Train retval;
         if (loading_train.valid() && tick == departure_time) {
             retval = loading_train;
-            loading_train = Train();
+            loading_train = invalidTrain;
         }
 
         if (!loading_train.valid() && !q.empty()) {
             loading_train = q.front();
-            q.pop();
+            q.pop_front();
             departure_time = tick + loading_train.get_loading_time();
         }
         return retval;
@@ -102,15 +110,24 @@ class Station {
         for (int i = 0; i < 2 * num_stn - 2; i++) {
             Train t = trains[i];
             if (t.valid() && t.get_destination() == this->get_id()) {
-                q.push(t);
+                q.push_back(t);
             }
+        }
+    }
+
+    void print() {
+        for (Train t : q) if (tick >= t.get_id()) {
+            printf(" %c%d-s%d,", color[t.get_color()], t.get_id(), this->get_id());
+        }
+
+        if (loading_train.valid()) {
+            printf(" %c%d-s%d,", color[loading_train.get_color()], loading_train.get_id(), this->get_id());
         }
     }
 };
 
 class Link {
   private:
-    queue<Train> q;
     Station *current_station;
     Station *next_station;
     Link *next[MAX_LINES];
@@ -118,6 +135,7 @@ class Link {
     int arrival_time;
     Train moving_train;
   public:
+    deque<Train> q;
     Link(Station *current_station, Station *next_station, int distance) {
         this->current_station = current_station;
         this->next_station = next_station;
@@ -126,6 +144,21 @@ class Link {
 
     ~Link() = default;
 
+    void print() {
+        int rank;
+        MPI_Comm_rank(current_station->comm, &rank);
+        if (rank == 0) {
+            current_station->print();
+        }
+
+        for (Train t : this->q) {
+            printf(" %c%d-s%d,", color[t.get_color()], t.get_id(), current_station->get_id());
+        }
+
+        if (moving_train.valid()) {
+            printf(" %c%d-s%d->s%d,", color[moving_train.get_color()], moving_train.get_id(), current_station->get_id(), next_station->get_id());
+        }
+    }
     void set_next(int color, Link *next) {
         this->next[color] = next;
     }
@@ -134,12 +167,12 @@ class Link {
         Train retval;
         if (moving_train.valid() && tick == arrival_time) {
             retval = moving_train;
-            moving_train = Train();
+            moving_train = invalidTrain;
         }
 
         if (!moving_train.valid() && !q.empty()) {
             moving_train = q.front();
-            q.pop();
+            q.pop_front();
             arrival_time = tick + distance;
         }
         return retval;
@@ -149,7 +182,7 @@ class Link {
         // stationnya di simulate
         Train train = this->current_station->simulate();
         if (train.valid()) {
-            q.push(train);
+            q.push_back(train);
         }
 
         // gua nya disimulate
@@ -158,8 +191,8 @@ class Link {
 
         // pilih yang duluan
         Station *first = current_station->get_id() < next_station->get_id() ? current_station : next_station;
-        Station *second = current_station->get_id() < next_station->get_id() ? next_station : current_station; 
-	Train trains[2 * num_stn];
+        Station *second = current_station->get_id() < next_station->get_id() ? next_station : current_station;
+        Train trains[2 * num_stn];
 
         MPI_Allgather(current_station == first ? &invalidTrain : &arrived_train, sizeof(Train), MPI_BYTE, &trains, sizeof(Train), MPI_BYTE, first->comm);
         if (current_station == first) {
@@ -171,6 +204,7 @@ class Link {
         if (current_station == second) {
             second->update_queue(trains);
         }
+
     }
 };
 
@@ -220,14 +254,14 @@ void load_data() {
         }
     }
 
+    // Duration
+    scanf("%d", &duration);
+
     // Train count
     int train_count[MAX_LINES];
     for (int i = 0; i < num_line; i++) {
         scanf("%d", &train_count[i]);
     }
-
-    // Duration
-    scanf("%d", &duration);
 
     // Station
     for (int i = 0; i < num_stn; i++) {
@@ -250,17 +284,21 @@ void load_data() {
             links[cur][nxt]->set_next(i, links[nxt][nxtnxt]);
         }
     }
+
+    for (int i = 0; i < num_line; i++) {
+        int len = routes[i].size();
+        Station *home_station = stations[routes[i][0]];
+        for (int j = 0; j < train_count[i]; j++) {
+            home_station->q.push_back(Train(i, j));
+        }
+    }
 }
 
 int main(int argc, char **argv) {
-freopen("test.in", "r", stdin);
+    freopen("small.in", "r", stdin);
     MPI_Init(&argc, &argv);
     int rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-
-    printf("Process %d Ready\n", rank);
-    fflush(stdout);
-    MPI_Barrier(MPI_COMM_WORLD);
 
     load_data();
     srand(time(NULL));
@@ -271,32 +309,44 @@ freopen("test.in", "r", stdin);
         int arr[2 * num_stn];
         int ctr = 0;
         for (int j = 0; j < num_stn; j++) if (i != j) {
-            arr[ctr++] = id_of(i, j);
-        }
+                arr[ctr++] = id_of(i, j);
+            }
 
         for (int j = 0; j < num_stn; j++) if (i != j) {
-            arr[ctr++] = id_of(j, i);
-        }
+                arr[ctr++] = id_of(j, i);
+            }
+
         MPI_Group world_group;
         MPI_Comm_group(MPI_COMM_WORLD, &world_group);
         MPI_Group new_group;
         MPI_Group_incl(world_group, ctr, arr, &new_group);
-        MPI_Comm_create(MPI_COMM_WORLD, new_group, &stations[i]->comm);
+        MPI_Comm_create_group(MPI_COMM_WORLD, new_group, i, &stations[i]->comm);
     }
 
-    printf("Process %d Ready\n", rank);
-    fflush(stdout);
-    MPI_Barrier(MPI_COMM_WORLD);
-    
     // Simulation per tick
     for(tick = 0; tick < duration; tick ++) {
-        links[rank / num_stn][rank % num_stn]->handle();
+        if(rank / num_stn != rank % num_stn) {
+            links[rank / num_stn][rank % num_stn]->handle();
+        }
+
         // MPI receive new train arriving at cur
         if (rank == 0) {
+            if (tick != 0) {
+                printf("\n");
+            }
             printf("%d:", tick);
             fflush(stdout);
         }
-
-    return 0;
+        MPI_Barrier(MPI_COMM_WORLD);
+        if(rank / num_stn != rank % num_stn) {
+            links[rank / num_stn][rank % num_stn]->print();
+            fflush(stdout);
+        }
+        MPI_Barrier(MPI_COMM_WORLD);
     }
+    MPI_Finalize();
+    if (rank == 0) {
+        printf("\n");
+    }
+    return 0;
 }
