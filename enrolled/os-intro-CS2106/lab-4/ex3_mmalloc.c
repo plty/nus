@@ -177,6 +177,7 @@ void compact() {
 		}
 		current = last->nextPart;
 	}
+	printf("lol\n");
 	last->nextPart = (void *) last + hmi.partMetaSize + last->size;
 	last = last->nextPart;
 	last->size = hmi.totalSize - (hmi.partMetaSize + totalUsed);
