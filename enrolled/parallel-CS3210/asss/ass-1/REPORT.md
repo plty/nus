@@ -1,9 +1,13 @@
 # Train Network Simulation using Parallel Programming (MPI)
 
+### Agus Sentosa Hermawan & Jerrell Ezralemuel
+
+##### Full data can be viewed at this [Sheets](https://docs.google.com/spreadsheets/d/1ycBGbnsTEf_JzwuqpB4_IDfQKWS_2H73EuC3nWSXD4k/edit?usp=sharing) and testcases and code can be viewed at this [Github](https://github.com/plty/nus/tree/master/enrolled/parallel-CS3210/asss/ass-1)
+
 ## Assumptions
 
 - The assumptions taken for using this method is the computer can handle the number of links to be processed.
-- The train is larger than the number of links such that simulating every tick is worth the computation and sharing the train information with all of the links is worth the computation. and efficient.
+- The train is larger than the number of links such that simulating every tick is worth the computation and sharing the train information with all of the links is worth the computation, hence this implementation will be efficient.
 
 ## Implementation Details
 
@@ -33,7 +37,31 @@ This method is also won't introduce starvation in any way because everything is 
 
 We can state the obvious in here the computational complexity of the MPI and OMP is different as in this is a problem viewed from 2 different perspective in MPI the complexity scales with the number of links and in OMP it scales with the number of trains. as in OMP implementation will be faster on a system with 10000 edges and 10 train, and the MPI implementation will be worse on that. but the Link implementation / MPI implementation will be better on a system of densely populated train system as there is only several edges compared to trains. 
 
+## OMP
 
+|      | 220   | 310   | 465    | 620    |
+| ---- | ----- | ----- | ------ | ------ |
+| 14   | 5.039 | 7.719 | 10.642 | 14.098 |
+| 24   | 5.058 | 7.153 | 10.773 | 14.133 |
+| 34   | 5.045 | 7.133 | 10.693 | 14.115 |
+| 42   | 5.068 | 7.126 | 10.131 | 14.162 |
+| 52   | 5.070 | 7.074 | 10.790 | 14.175 |
+
+## MPI
+
+|      | 220    | 310    | 465    | 620    |
+| ---- | ------ | ------ | ------ | ------ |
+| 14   | 4.424  | 4.371  | 4.372  | 4.392  |
+| 24   | 7.047  | 7.028  | 6.994  | 6.977  |
+| 34   | 8.502  | 8.713  | 8.563  | 8.746  |
+| 42   | 9.802  | 9.744  | 9.818  | 9.74   |
+| 52   | 15.265 | 15.117 | 15.334 | 15.035 |
+
+the data also shows the same thing about correlativity of number of trains in each column and number of links that is in the row. 
+
+![](https://docs.google.com/spreadsheets/d/e/2PACX-1vQJ9GtI8tljxf9n6ENPE1Kv9JgsHrxfdaX-oKY6QUF3i8zG7iocDpCFOmZ6eXuXifMHs6lukS5tVtZu/pubchart?oid=1770731451&format=image)
+
+![](https://docs.google.com/spreadsheets/d/e/2PACX-1vQJ9GtI8tljxf9n6ENPE1Kv9JgsHrxfdaX-oKY6QUF3i8zG7iocDpCFOmZ6eXuXifMHs6lukS5tVtZu/pubchart?oid=1708366669&format=image)
 
 # Bonus
 
