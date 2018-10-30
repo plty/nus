@@ -1,0 +1,15 @@
+Heap Meta Info:
+===============
+Total Size = 1024 bytes
+Start Address = 0xbc6000
+Partition Meta Size = 24 bytes
+Partition list:
+[+    0 |    40 bytes | 1]
+[+   64 |    80 bytes | 0]
+[+  168 |   120 bytes | 1]
+[+  312 |   160 bytes | 0]
+[+  496 |   200 bytes | 1]
+[+  720 |    88 bytes | 1]
+[+  832 |   128 bytes | 0]
+[+  984 |    16 bytes | 0]
+

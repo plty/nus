@@ -1,0 +1,20 @@
+Heap Meta Info:
+===============
+Total Size = 1024 bytes
+Start Address = 0x1dd5000
+Partition Meta Size = 24 bytes
+Partition list:
+[+    0 |    40 bytes | 1]
+[+   64 |    80 bytes | 0]
+[+  168 |   120 bytes | 0]
+[+  312 |   160 bytes | 1]
+[+  496 |   504 bytes | 0]
+
+Heap Usage Statistics:
+======================
+Total Space: 1024 bytes
+Total Occupied Partitions: 2
+	Total Occupied Size: 200 bytes
+Total Number of Holes: 3
+	Total Hole Size: 704 bytes
+Total Meta Information Size: 120 bytes
