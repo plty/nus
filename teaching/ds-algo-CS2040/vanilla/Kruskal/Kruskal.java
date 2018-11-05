@@ -1,14 +1,12 @@
 import java.util.*;
 
 public class Kruskal {
-    private UnionFind uf;
     private ArrayList<Triplet> edges;
     private int size;
 
     public Kruskal(int size) {
-        this.size = size;
         edges = new ArrayList<>();
-        uf = new UnionFind(size);
+        this.size = size;
     }
 
     public void addEdge(int u, int v, int w) {
@@ -17,6 +15,7 @@ public class Kruskal {
 
     public ArrayList<Triplet> getMinimumSpanningTree() {
         ArrayList<Triplet> mst = new ArrayList<>();
+        UnionFind uf = new UnionFind(this.size);
         edges.sort((a, b) -> a.w - b.w);
         for (Triplet edge: edges) {
             if (uf.same(edge.u, edge.v))
