@@ -37,9 +37,6 @@ public class Dijkstra {
         }
         return distance;
     }
-
-    public static void main(String[] args) {
-    }
 }
 
 class Pair {
