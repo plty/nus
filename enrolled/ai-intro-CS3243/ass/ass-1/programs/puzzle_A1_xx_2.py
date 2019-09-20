@@ -22,6 +22,7 @@ class Puzzle:
     def __init__(self, init_state, goal_state):
         self.init_state = tuple(map(tuple, init_state))
         self.goal_state = tuple(map(tuple, goal_state))
+        self.solvable = True
 
     def actions(self, state):
         moves = [(0, 1), (1, 0), (0, -1), (-1, 0)]
@@ -29,7 +30,12 @@ class Puzzle:
         return [(i, j) for (i, j) in moves if 0 <=r + i < 3 and 0 <=c + j < 3]
 
     def heuristic(self, state):
-        return sum([abs((state[i][j] - 1) // 3 - i) + abs((state[i][j] - 1) % 3 - j) for i in range(3) for j in range(3) if state[i][j] != 0])
+        pos = [None] * 9
+        for i in range(3):
+            for j in range(3):
+                pos[goal_state[i][j]] = (i, j)
+        return sum([abs(i - pos[state[i][j]][0]) + abs(j - pos[state[i][j]][1]) for i in range(3) for j in range(3) if state[i][j] != 0])
+
 
     def move(self, state, action):
         dr, dc = action
@@ -65,17 +71,18 @@ class Puzzle:
             for s in states:
                 frontier.push(s)
 
-        print("MAX FRONTIER SIZE:", max_frontier_size)
-        print("NODES CREATED:", nodes_created)
+        # print("MAX FRONTIER SIZE:", max_frontier_size)
+        # print("NODES CREATED:", nodes_created)
         if goal_distance is None:
+            self.solvable = False
             return ["UNSOLVABLE"]
 
         current = self.goal_state
         moves = []
         while current != self.init_state:
             _, action, current = min([(explored[s], a, s)
-                    for a, s in [(action, self.move(current, action)) for action in self.actions(current)]
-                    if s in explored])
+                for a, s in [(action, self.move(current, action)) for action in self.actions(current)]
+                if s in explored])
             moves += [action]
         action_name = {(0, 1): "RIGHT", (1, 0): "DOWN", (0, -1): "LEFT", (-1, 0): "UP"}
         return map(lambda x: action_name[x], reversed(moves))
