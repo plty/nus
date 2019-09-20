@@ -43,9 +43,12 @@ class Puzzle:
         # explored double as known distance to a state.
         explored = {}
         goal_distance = None
+        max_frontier_size = 0
+        nodes_created = 0
 
         frontier.push((self.heuristic(self.init_state), 0, self.init_state))
         while frontier.size() > 0:
+            max_frontier_size = max(max_frontier_size, frontier.size())
             prio, distance, state = frontier.pop()
             if state in explored:
                 continue
@@ -54,13 +57,16 @@ class Puzzle:
                 goal_distance = distance
                 break
 
-            states = [(distance + 1 + self.heuristic(s), distance + 1, s) 
-                    for s in [self.move(state, action) for action in self.actions(state)] 
+            states = [(distance + 1 + self.heuristic(s), distance + 1, s)
+                    for s in [self.move(state, action) for action in self.actions(state)]
                     if s not in explored]
 
+            nodes_created += len(states)
             for s in states:
                 frontier.push(s)
 
+        print("MAX FRONTIER SIZE:", max_frontier_size)
+        print("NODES CREATED:", nodes_created)
         if goal_distance == None:
             return ["UNSOLVABLE"]
 
