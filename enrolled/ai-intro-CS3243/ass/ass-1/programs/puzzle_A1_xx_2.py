@@ -61,7 +61,7 @@ class Puzzle:
             for s in states:
                 frontier.push(s)
 
-        if goal_distance == None:
+        if goal_distance is None:
             return ["UNSOLVABLE"]
 
         current = self.goal_state
