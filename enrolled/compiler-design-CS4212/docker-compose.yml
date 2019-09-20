@@ -1,0 +1,8 @@
+version: '3'
+services:
+  centaur:
+    image: openjdk
+    command: "tail -F any"
+    working_dir: /root/centaur
+    volumes: 
+      - .:/root/centaur

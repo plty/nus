@@ -1,0 +1,152 @@
+\documentclass[12pt,letterpaper,pdftex]{report}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{paralist}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{xspace}
+\usepackage[pdftex,letterpaper,left=1in,top=1in,bottom=1in,right=1in,includeheadfoot]{geometry}
+\usepackage{fancyhdr}
+\usepackage[shortlabels]{enumitem}
+\pagestyle{fancy}
+\lhead{\footnotesize Tutorial 1: CS3243 Introduction to AI \\ \bf {Issued: Aug 19, 2019}}
+\rhead{\footnotesize Semester 1, AY 2019/20 \\ \bf{Due: Week 3 Tutorial}}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\usepackage{times}
+\usepackage[pdftex]{epsfig}
+
+\usepackage{algorithm}
+\usepackage{algcompatible}
+
+\usepackage{comment}
+\specialcomment{solution}{\paragraph{\textbf{Solution:}}}{\par}
+
+
+
+\usepackage{tabularx}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\ma}[1]{{\bf #1}}
+\newcommand{\ve}[1]{{\mathbf #1}}
+\newcommand{\set}[1]{{\mathcal #1}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\defeq}[0]{\ensuremath{\stackrel{\triangle}{=}}}
+\renewcommand{\cal}[1]{\mathcal{#1}}
+\newcommand{\tup}[1]{\langle #1 \rangle}
+\newcommand{\true}{\texttt{true}\xspace}
+\newcommand{\false}{\texttt{false}\xspace}
+\newcommand{\Neighbors}{\mathtt{Neighbors}}
+\begin{document}
+
+{\bf Instructions}:
+\emph{
+	\begin{compactitem}
+	\item Your solutions for this tutorial must be TYPE-WRITTEN.
+	\item Submit your solution(s) to your tutor. You can make another copy for
+	yourself if necessary. Late submission will NOT be entertained.
+	\item YOUR SOLUTION TO QUESTION $1$ will be GRADED for this tutorial.
+	\item You can work in pairs, but each of you should submit the solution(s) individually.
+	\item Include the name of your collaborator in your submission.
+	\end{compactitem}
+}
+
+\vspace{5mm}
+
+\begin{table}[]
+	\begin{tabular}{|l|p{5cm}|l|p{2cm}|}
+	\hline
+	Name         &  & Matric number                &  \\ \hline
+	Collaborator &  & Collaborator's matric number &  \\ \hline
+	\end{tabular}
+	\end{table}
+
+\begin{enumerate}
+
+
+\item You are tasked with the creation of an interactive agent that would be
+deployed in an automatic coffee-vending machine. The agent needs to work as a
+chatbot to converse with the user. Answer the questions below which would be
+crucial in the design of your agent:
+
+	\begin{compactenum}
+		\item How would you define the agent’s state and action space?
+		\item What would the utility function of the agent involve?
+		\item What kind of exploration actions could the system take?
+		\item For a highly flexible chatbot deployed as the agent, what kind of
+		action should it refrain from taking?
+	\end{compactenum}
+
+\begin{solution}
+	User agent's state: [Credit, Chosen Coffee, Machine State]
+\end{solution}
+
+
+\item You have been appointed as the lead engineer in the development team of
+NUSmart Shuttle Bus - the new autonomous shuttle in
+NUS~\footnote{\url{https://uci.nus.edu.sg/oca/latest-news/nusmart-shuttle-a-fully-autonomous-vehicle/}}.
+Define the characteristics of the task environment in which the shuttle has to
+be deployed. Support your answer with sufficient reasoning behind your choices.
+	
+	\begin{compactenum}
+		\item Comment on the observability aspect of the environment. 
+		\item Is the environment a single-agents, collaborative multi-agent or
+		competitive multi-agent environment? Justify your answer.
+		\item Will the environment be deterministic or stochastic? Give an
+		example scenario to support your answer.
+		\item Would you model the environment to be episodic or sequential?
+		Explain your choice.
+	\end{compactenum}
+
+	
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[scale=0.1]{images/autonomous}
+	\caption{NUSmart autonomous shuttle.}
+	\label{autonomous}
+\end{figure}
+
+\begin{solution}
+	\textbf{Your solution here}
+\end{solution}
+
+
+\item Are reflex actions (such as flinching your hand from a hot stove)
+rational? Are reflex actions intelligent?
+
+\begin{solution}
+	\textbf{Your solution here}
+\end{solution}
+
+
+\item Weizenbaum's ELIZA program simulates the behavior of a
+psychotherapist carrying out a conversation with a patient. It
+basically works by finding keywords in the user's input so as to fire
+certain rules based on the keywords. Which AI definition does ELIZA
+fit in? (Thinking humanly? Acting humanly? Thinking rationally? Acting
+rationally?) Discuss how an ELIZA-like system will behave, if it is
+modeled according to each of the four agent types, namely, ``simple
+reflex agent'', ``model-based reflex agent'', ``goal-based agent'',
+and ``utility-based agent''.
+
+\begin{solution}
+	\textbf{Your solution here}
+\end{solution}
+
+
+\end{enumerate}
+
+
+
+\end{document}
