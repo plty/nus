@@ -4,9 +4,9 @@
 Q1. Test the code below. Describe how precedence operator
     of + and * were determined by the recursive parser.
 
-    Explain what changes will be needed to change the 
+    Explain what changes will be needed to change the
     precedence of these operators.
-    
+
     Write your answer below.
 
 ex1 = "1+2*3"
@@ -15,12 +15,12 @@ q1_test1 = calcE ex1
 q1_test2 = calcE ex2
 
 
-Q2. Test the code below . Describe how left and right-associativity 
-    of + and * are being supported. 
+Q2. Test the code below . Describe how left and right-associativity
+    of + and * are being supported.
 
     Explain what changes will be needed to make these
     operators right associative?
- 
+
 ex3 = "1+2+3"
 ex4 = "1*2*3"
 q2_test3 = calcE ex3
@@ -31,7 +31,7 @@ Q3. Implement a power operator ^ that that is right associative
     For example, 2^3+1^2  = 2^((3+1)^2))
                         = 2^(4^2)
                         = ..
-    Add a constructor: 
+    Add a constructor:
          Power Expr Expr  to Expr type
     Add a function:
          ePow  x y = Power x y
@@ -65,7 +65,7 @@ e6c = calcE ex6c
 Q5. Integrate this lexical analyser as a front-end of our parser.
     Add a non-recursive let-binding to our calculator of the
     form:  let x=1+3 in 3*x+2.
-	
+
 Some initial code for constructing lexical analyser is given below.
 Please read it, and try to complete it.
 
@@ -73,20 +73,20 @@ Please read it, and try to complete it.
 -}
 
 
-module SParsec where 
+module SParsec where
 
 import Text.Parsec
 import Text.ParserCombinators.Parsec.Language
 import qualified Text.ParserCombinators.Parsec.Token as Token
 
-data Expr = Const Int | Plus Expr Expr 
+data Expr = Const Int | Plus Expr Expr
           | Minus Expr Expr | Mult Expr Expr
           | Div Expr Expr   deriving (Show)
 
 
-eAdd  x y = Plus x y 
-eSub  x y = Minus x y 
-eMult x y = Mult x y 
+eAdd  x y = Plus x y
+eSub  x y = Minus x y
+eMult x y = Mult x y
 eDiv  x y = Div x y
 sToC  s   = Const (read s)
 
@@ -94,13 +94,13 @@ type SParsec = Parsec String ()
 
 expr :: SParsec Expr
 expr = chainl1 term addop            -- x+y-z+...
-  
+
 term :: SParsec Expr
 term = chainl1 factor mulop          -- x*y/z*...
 
 factor :: SParsec Expr
 factor = (parens expr) <|> constants -- 12 | (...)
-  
+
 parens :: SParsec Expr -> SParsec Expr
 parens ex = do char '('
                x <- ex
@@ -109,7 +109,7 @@ parens ex = do char '('
 
 constants :: SParsec Expr
 constants = parsecMap sToC $ many1 digits
-  
+
 digits :: SParsec Char
 digits =
     char '0' <|> char '1' <|> char '2' <|>
@@ -132,9 +132,9 @@ eval :: Either ParseError Expr -> Either ParseError Int
 eval x =
       let eval' :: Expr -> Int
           eval' (Const  x) = x
-          eval' (Plus  x y) = eval' x + eval' y 
-          eval' (Minus  x y) = eval' x - eval' y 
-          eval' (Mult x y) = eval' x * eval' y 
+          eval' (Plus  x y) = eval' x + eval' y
+          eval' (Minus  x y) = eval' x - eval' y
+          eval' (Mult x y) = eval' x * eval' y
           eval' (Div  x y) = div (eval' x) (eval' y)
       in
           fmap eval' x
@@ -194,7 +194,7 @@ data Word = WInt Integer | WId String | WPlus | WMinus
           | WEq
           deriving (Show)
 
-onetoken = 
+onetoken =
        (parsecMap (\x -> WId x) $ identifier)
        <|> (parsecMap (\x -> WPlus) $ reservedOp "+")
        <|> (parsecMap (\x -> WMinus) $ reservedOp "-")
@@ -209,3 +209,4 @@ q5 = parse mtokens "" ex7
 q6 = parse mtokens "" "1- 2"
 q6a = parse mtokens "" "1- 2"
 q6c = parse expr "" " 1 - 2"
+
