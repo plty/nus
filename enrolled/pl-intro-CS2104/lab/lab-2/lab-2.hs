@@ -1,7 +1,7 @@
 module Lab02 where
 import           Control.Monad (join)
 import qualified Data.List     as L
-import           Prelude       hiding (product, reverse)
+import           Prelude       hiding (product, reverse, showList)
 import Debug.Trace (trace)
 {-|
 
@@ -109,7 +109,7 @@ foldTree fLeaf fNode (Node v leftTree rightTree) =
    Node 6 (Leaf 4) (Leaf 5)
 -}
 addN ::Int -> Tree Int -> Tree Int
-addN n = mapTree (+ n)
+addN n = mapTree (+n)
 {-|
    (b)
    Write a function that would return the left most element of a tree
@@ -123,7 +123,7 @@ addN n = mapTree (+ n)
    1
 -}
 leftMost :: Tree a -> a
-leftMost = foldTree (\(Leaf x) -> x) (\(Node _ l _) -> l)
+leftMost = foldTree (\x -> x) (\_ l _ -> l)
 {-|
    (c)
    Write a function that would mirror a tree aound its root element, i.e., a
@@ -134,7 +134,7 @@ leftMost = foldTree (\(Leaf x) -> x) (\(Node _ l _) -> l)
    Node 4 (Leaf 6) (Node 3 (Leaf 2) (Leaf 1))
 -}
 mirrorTree :: Tree a -> Tree a
-mirrorTree = foldTree (\x -> x) (\(Node v l r) -> Node v r l)
+mirrorTree = foldTree (\x -> (Leaf x)) (\v l r -> Node v r l)
 t4 :: Tree Char
 t4 = Node 'a' (Leaf 'b') (Node 'c' (Leaf 'e') (Leaf 'f'))
 {-|
@@ -146,12 +146,12 @@ t4 = Node 'a' (Leaf 'b') (Node 'c' (Leaf 'e') (Leaf 'f'))
    > addSize t4
    Node (5, 'a') (Leaf (1, 'b')) (Node (3, 'c') (Leaf (1, 'e')) (Leaf (1, 'f')))
 -}
-getValue :: Tree a -> a
-getValue Leaf v -> v
-getValue Node v _ _ -> v
+getValue :: Tree (a, b) -> a
+getValue (Leaf (x, v)) = x
+getValue (Node (x, v) _ _) = x
 
 addSize :: Tree a -> Tree (Int, a)
-addSize = foldTree (\(Leaf x) -> Leaf (x, 1)) (\(Node v l@(Tree (_, a)) r@(Tree (_, b))) -> Node (v, a + b) l r)
+addSize = foldTree (\x -> Leaf (1, x)) (\v l r -> Node (1 + (getValue l) + (getValue r), v) l r)
 {-|
    (e)
    Write a function to check if a tree of integers is a binary search tree, i.e.,
@@ -170,7 +170,7 @@ addSize = foldTree (\(Leaf x) -> Leaf (x, 1)) (\(Node v l@(Tree (_, a)) r@(Tree 
 t5 :: Tree Int
 t5 = Node 2 (Leaf 1) (Leaf 3)
 checkBST :: Tree Int -> Bool
-checkBST = error "'checkBST' - To be implemented"
+checkBST t = (\(x, y, z) -> z) (foldTree (\x -> (x, x, True)) (\v (minL, maxL, bstL) (minR, maxR, bstR) -> (minL, maxR, bstL && bstR && maxL <= v && v <= minR)) t)
 {-|
    Q5:
    The 'foldTree' operation uses tree recursion.
@@ -185,7 +185,7 @@ checkBST = error "'checkBST' - To be implemented"
    (b) Compare 'foldTreePostorder' with 'foldTree'. Can one be implemented in
        terms of the other, or are they incomparable?
 -}
-foldTreePostorder :: Show a => (a -> b -> b) -> Tree a -> b -> b
+foldTreePostorder :: (a -> b -> b) -> Tree a -> b -> b
 foldTreePostorder f (Leaf v) acc = f v acc
 foldTreePostorder f (Node v leftTree rightTree) acc =
    foldTreePostorder f leftTree z2
@@ -193,7 +193,14 @@ foldTreePostorder f (Node v leftTree rightTree) acc =
      z1 = foldTreePostorder f rightTree acc
      z2 = f v z1
 countTree :: Tree a -> Int
-countTree = error "'countTree' - To be implemented"
+countTree t = foldTreePostorder (\_ x -> x + 1) t 0
+
+{--ANSWER
+ - (b)
+    foldTreePostorder doesn't allow to differentiate and Leaf, and Node, other than that,
+    because folding always done in post order, but foldTree gives more generality and choice.
+--}
+
 {-|
    Q6: Pretty printers
    Consider the binary tree defined earlier.
@@ -235,9 +242,19 @@ showTree (Node v leftTree rightTree) =
    showTree leftTree ++
    showTree rightTree
 showTree2 :: Show a => Tree a -> String
-showTree2 = error "'showTree2' - To be implemented - neat tree with nested indentation"
+showTree2 t = 
+   let
+     aux x (Leaf v) = (replicate (x * 2) ' ') ++ "Leaf " ++ (show v) ++ "\n"
+     aux x (Node v l r) = (replicate (x * 2) ' ') ++ "Node " ++ (show v) ++ "\n" ++ (aux (x + 1) l) ++ (aux (x + 1) r)
+   in
+     aux 0 t
 showTreeInfix :: Show a => Tree a -> String
-showTreeInfix = error "'showTreeInfix' - To be implemented - neat tree with nested indentation in infix form"
+showTreeInfix t = 
+   let
+     aux x (Leaf v) = (replicate (x * 2) ' ') ++ "Leaf " ++ (show v) ++ "\n"
+     aux x (Node v l r) = (aux (x + 1) l) ++ (replicate (x * 2) ' ') ++ "Node " ++ (show v) ++ "\n" ++ (aux (x + 1) r)
+   in
+     aux 0 t
 {-|
    Q7: Numbered Lists
    We have our own printer for lists in 'showList', which prints a list as a
@@ -262,5 +279,9 @@ addNum xs =
      aux xs 1
 ls :: [String]
 ls = ["This", "is", "a", "numbered", "list"]
+
+showListSep :: [Char] -> [String] -> String
+showListSep sep xs = "[" ++ L.intercalate sep xs ++ "]"
+
 showListNum :: Show a => String -> [a] -> String
-showListNum separator = error "'showListNum' - To be implemented"
+showListNum separator xs = showListSep separator (map (\(x, y) -> "(" ++ (show x) ++ ")" ++ show y) (addNum xs))

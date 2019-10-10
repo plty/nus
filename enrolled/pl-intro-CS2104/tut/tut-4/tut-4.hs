@@ -55,7 +55,7 @@ Q2 : Can you think of a way to generate
 -}
 
 primes :: Integral a => [a]
-primes = error "TBI: please use the sieve method over infinite numbers"
+primes = sieve [2..]
 
 sel_drop f (ys @ (x:xs))  =
     if (f x) then ys
@@ -66,7 +66,7 @@ sel_take f (x:xs)  =
     else x:(sel_take f xs)
 
 
-q2 = error "TBI: number of primes between 10000 to 20000 inclusive"
+q2 = sel_take (>20000) (sel_drop (>=10000) primes)
 
 
 
