@@ -14,6 +14,8 @@ ex2 = "1*2+3"
 q1_test1 = calcE ex1
 q1_test2 = calcE ex2
 
+ANSWER: Change the ordering of token in eval.
+
 
 Q2. Test the code below . Describe how left and right-associativity
     of + and * are being supported.
@@ -80,7 +82,7 @@ import Text.ParserCombinators.Parsec.Language
 import qualified Text.ParserCombinators.Parsec.Token as Token
 
 data Expr = Const Int | Plus Expr Expr
-          | Minus Expr Expr | Mult Expr Expr
+          | Minus Expr Expr | Mult Expr Expr | Pow Expr Expr
           | Div Expr Expr   deriving (Show)
 
 

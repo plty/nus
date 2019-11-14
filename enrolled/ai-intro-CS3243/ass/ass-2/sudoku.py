@@ -1,11 +1,18 @@
 import sys
 import copy
 
+class CspSolver:
+    n = 0
+    constraints = []
+
+    def __init__(self, n, domains, constraints):
+        self.constraints = constraints
+
+    pass
 class Sudoku(object):
     def __init__(self, puzzle):
         # you may add more attributes if you need
         self.puzzle = puzzle # self.puzzle is a list of lists
-        self.ans = copy.deepcopy(puzzle) # self.ans is a list of lists
 
     def solve(self):
         #TODO: Your code here
