@@ -1,0 +1,32 @@
+Clarification for Lab4
+======================
+1. You can work in a group of 2 or individually. If working in
+   a group of two, please submit a written report on your project.
+
+2. The skeletal code is given to facilitate your project. You are
+   free to change it, except for the interfaces to the following
+   two methods:
+   
+   parseProgram :: String -> Either ParseError Program
+   interpret :: Program -> Rel -> [Subs]
+   
+   That means the data structures used by these methods must also
+   NOT be changed. All other aspects of the stub code can be changed 
+   (or corrected).
+
+3. Take note that below is used to capture a Prolog clause
+   with a single head Rel
+
+   data Rule = Rule Rel [[Rel]] deriving Show
+   
+   The body of the clause is [[Rel]] in order to support a conjunction
+   of disjunction. For example:
+      p(..) :- (p1(..);p2(..)), p3(..),p4(..)
+   could be captured as:
+      Rule (p(..)) [[p1(..),p2(..)],[p3(..)],[p4(..)]]
+   This [[Rel]] allows disjunction to be captured. However,
+   your implementation need NOT consider the use of ";".
+   Hence, while the data type of Rule is more general, your
+   implementation need not support ";". 
+   
+   You may thus assume that [[Rel]] is a list of singleton Rel.
