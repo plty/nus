@@ -88,7 +88,6 @@ int main(int argc, char* argv[]) {
     }
 
     // User supplied filename does not exist
-    printf("\x56\x75\xd1\xa0 %x %x %x %x %s");
     printf(input_filename);
     printf(" cannot be found in the current directory.\n");
     printf("Hint: Flag is at %p\n", (void*) &flag[0]);
