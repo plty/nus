@@ -81,26 +81,30 @@ import qualified Text.ParserCombinators.Parsec.Token as Token
 
 data Expr = Const Int | Plus Expr Expr 
           | Minus Expr Expr | Mult Expr Expr
-          | Div Expr Expr   deriving (Show)
+          | Div Expr Expr | Pow Expr Expr   deriving (Show)
 
 
 eAdd  x y = Plus x y 
 eSub  x y = Minus x y 
 eMult x y = Mult x y 
 eDiv  x y = Div x y
+ePow  x y = Pow x y
 sToC  s   = Const (read s)
 
 type SParsec = Parsec String ()
 
 expr :: SParsec Expr
-expr = chainl1 term addop            -- x+y-z+...
-  
-term :: SParsec Expr
-term = chainl1 factor mulop          -- x*y/z*...
+expr = chainl1 term1 addop            -- x+y-z+...
 
-factor :: SParsec Expr
-factor = (parens expr) <|> constants -- 12 | (...)
-  
+term0 :: SParsec Expr
+term0 = (parens expr) <|> constants -- 12 | (...)
+
+term1 :: SParsec Expr
+term1 = chainl1 term2 mulop          -- x*y/z*...
+
+term2 :: SParsec Expr
+term2 = chainr1 term0 powop
+
 parens :: SParsec Expr -> SParsec Expr
 parens ex = do char '('
                x <- ex
@@ -115,6 +119,9 @@ digits =
     char '0' <|> char '1' <|> char '2' <|>
     char '3' <|> char '4' <|> char '5' <|>
     char '6' <|> char '7' <|> char '8' <|> char '9'
+
+powop :: SParsec (Expr -> Expr -> Expr)
+powop = do { char '^'; return ePow }
 
 mulop :: SParsec (Expr -> Expr -> Expr)
 mulop = do { char '*'; return eMult }
@@ -136,6 +143,7 @@ eval x =
           eval' (Minus  x y) = eval' x - eval' y 
           eval' (Mult x y) = eval' x * eval' y 
           eval' (Div  x y) = div (eval' x) (eval' y)
+          eval' (Pow  x y) = (eval' x) ^ (eval' y)
       in
           fmap eval' x
 
