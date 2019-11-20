@@ -28,5 +28,5 @@ Clarification for Lab4
    your implementation need NOT consider the use of ";".
    Hence, while the data type of Rule is more general, your
    implementation need not support ";". 
-   
+
    You may thus assume that [[Rel]] is a list of singleton Rel.

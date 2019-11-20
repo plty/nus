@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="403a5eb0-8016-47c6-aa65-b820e1612c2f" name="Default Changelist" comment="" />
+    <list default="true" id="403a5eb0-8016-47c6-aa65-b820e1612c2f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,6 +13,9 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="aTqjhULH" />
   </component>
@@ -18,6 +23,7 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1TmAfxBYU0HY6DOYDqBGYa2XkUV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -47,10 +53,27 @@
       <option name="presentableId" value="Default" />
       <updated>1574055003379</updated>
       <workItem from="1574055007042" duration="1948000" />
+      <workItem from="1574108520240" duration="13268000" />
+      <workItem from="1574247676630" duration="304000" />
+      <workItem from="1574266071279" duration="897000" />
+      <workItem from="1574276963114" duration="3012000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
